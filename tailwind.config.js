@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#511E84',
+        secondary: '#E40046',
       },
       textShadow: {
         DEFAULT: '0.1em 0.1em 0.3em var(--tw-shadow-color, black)',
