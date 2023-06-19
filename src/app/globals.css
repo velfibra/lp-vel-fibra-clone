@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.rise {
+  animation-play-state: paused;
+  animation-fill-mode: none;
+  visibility: hidden;
+  animation-delay: 1ms !important;
+}
