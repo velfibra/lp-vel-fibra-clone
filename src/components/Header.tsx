@@ -4,7 +4,7 @@ import MobileMenu from './MobileMenu';
 
 export default function Header() {
   return (
-    <header className="top-0 flex h-24 items-center bg-primary max-lg:h-[50px]">
+    <header className="top-0 flex h-24 items-center bg-primary max-lg:h-20">
       <Logo className="ml-5 max-lg:hidden" />
       <LogoMobile className="ml-24 lg:hidden" />
       <div className="ml-64 flex w-3/5 justify-between text-white max-2xl:ml-0 max-2xl:w-4/5 max-2xl:justify-evenly max-lg:hidden">
