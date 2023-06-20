@@ -1,20 +1,22 @@
 export default function LocationContent() {
   return (
-    <section className="flex h-[700px] flex-col bg-gray-500 max-lg:h-[577px]">
-      <h1 className="mb-5 mr-20 text-end text-[130px] font-bold uppercase text-white">
-        estamos aqui!
-      </h1>
-      <div className="ml-auto mr-14 flex w-1/2 justify-end text-2xl font-semibold text-white">
-        {locations.map(({ local }, i) => (
-          <ul
-            className="ml-5 h-fit w-fit border-x-[1px] px-2 first:border-none last:border-none"
-            key={i}
-          >
-            {local.map((i) => (
-              <li key={i}>{i}</li>
-            ))}
-          </ul>
-        ))}
+    <section className="flex h-[700px] flex-col bg-gray-500 max-lg:h-[580px] max-lg:justify-end">
+      <div className="flex flex-col max-lg:mb-5">
+        <h1 className="mb-5 mr-20 text-end text-[130px] font-bold uppercase text-white max-lg:mr-0 max-lg:text-center max-lg:text-3xl">
+          estamos aqui!
+        </h1>
+        <div className="ml-auto mr-14 flex justify-end font-semibold text-white max-lg:mr-0 max-lg:w-full max-lg:justify-center max-lg:text-[12px] lg:text-xl">
+          {locations.map(({ local }, i) => (
+            <ul
+              className="ml-5 h-fit w-fit border-x-[1px] px-2 first:border-none last:border-none max-lg:px-0"
+              key={i}
+            >
+              {local.map((i) => (
+                <li key={i}>{i}</li>
+              ))}
+            </ul>
+          ))}
+        </div>
       </div>
     </section>
   );

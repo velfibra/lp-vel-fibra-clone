@@ -5,7 +5,7 @@ type Props = {
 
 export default function CardTitle({ children, href }: Props) {
   return (
-    <h1 className="w-full text-center text-[16px] font-bold xl:mb-1 xl:text-4xl" id={href}>
+    <h1 className="mb-5 w-full text-center text-6xl font-bold max-lg:text-5xl" id={href}>
       {children}
     </h1>
   );
