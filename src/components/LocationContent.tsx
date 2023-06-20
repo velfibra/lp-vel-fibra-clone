@@ -8,7 +8,7 @@ export default function LocationContent() {
         <div className="ml-auto mr-14 flex justify-end font-semibold text-white max-lg:mr-0 max-lg:w-full max-lg:justify-center max-lg:text-[12px] lg:text-xl">
           {locations.map(({ local }, i) => (
             <ul
-              className="ml-5 h-fit w-fit border-x-[1px] px-2 first:border-none last:border-none max-lg:px-0"
+              className="ml-5 h-fit w-fit border-x-[1px] px-2 first:border-none last:border-none max-lg:ml-3 max-lg:px-0"
               key={i}
             >
               {local.map((i) => (
