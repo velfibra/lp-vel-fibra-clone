@@ -20,7 +20,7 @@ export default function MobileMenu() {
         <div className="h-0.5 w-4 bg-gray-300" />
       </button>
       <Popper
-        className="fixed top-12 z-30 m-0 w-full animate-fadeInDown border-t-2 border-primary bg-primary/80 font-bold uppercase text-white"
+        className="fixed top-20 z-30 m-0 w-full animate-fadeInDown border-t-2 border-primary bg-primary/90 font-bold uppercase text-white"
         open={open}
         onClose={() => setOpen(false)}
         id="menu-modal"
