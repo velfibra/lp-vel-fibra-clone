@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function PlansContent() {
   return (
-    <section className="mx-auto max-w-[1580px] p-6">
+    <section className="mx-auto mb-10 max-w-[1580px] p-6">
       <div className="mb-10">
         <h1 className="text-center text-3xl font-bold uppercase text-primary">
           Conheça nosso planos
