@@ -15,7 +15,7 @@ export default function Hero() {
           </button>
         </div>
       </div>
-      <h3 className="mt-44 animate-fadeInUp text-center text-3xl font-bold text-white animation-delay-1000 max-lg:mt-24 max-lg:text-lg">
+      <h3 className="mt-44 animate-fadeInUp text-center text-3xl font-bold text-white animation-delay-1000 max-lg:mt-28 max-lg:text-lg">
         VIVA MUITO MAIS CONECTADO
       </h3>
     </div>
