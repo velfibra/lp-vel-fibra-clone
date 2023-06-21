@@ -18,7 +18,7 @@ export default function PlansContent() {
         {plans.map(({ h1, h2, text, bg, hover, icons, offer }) => (
           <Card className={`flex flex-col gap-3 py-20 ${text}`} key={h1}>
             {offer && (
-              <div className="absolute max-lg:ml-10 -mt-24 ml-24 w-[200px] animate-bounce rounded-xl border-[1px] border-black bg-primary p-3 px-5 text-center text-xl text-white">
+              <div className="absolute max-lg:ml-7 -mt-24 2xl:ml-[110px] xl:ml-[75px] w-[220px] animate-bounce rounded-xl border-[1px] border-black bg-primary p-3 px-5 text-center text-xl text-white">
                 Melhor oferta
               </div>
             )}
