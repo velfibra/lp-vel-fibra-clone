@@ -7,14 +7,14 @@ export default function PlansContent() {
   return (
     <section className="mx-auto mb-10 max-w-[1580px] p-6 max-lg:w-full">
       <div className="mb-10">
-        <h1 className="text-center text-3xl font-bold uppercase text-primary max-lg:text-2xl">
+        <h1 className="rise animate-fadeInUp text-center text-3xl font-bold uppercase text-primary max-lg:text-2xl">
           Conheça nossos planos
         </h1>
-        <h3 className="text-center text-xl max-lg:text-center max-lg:text-base">
+        <h3 className="rise animate-fadeInUp text-center text-xl max-lg:text-center max-lg:text-base">
           Fuja do básico! Escolha o melhor plano de internet para você
         </h3>
       </div>
-      <div className="grid grid-cols-3 gap-5 max-lg:grid-cols-1">
+      <div className="grid grid-cols-3 gap-5 max-lg:grid-cols-1 rise animate-fadeInUp animation-delay-300">
         {plans.map(({ h1, h2, text, bg, hover, icons, offer }) => (
           <Card className={`flex flex-col gap-3 py-20 ${text}`} key={h1}>
             {offer && (
