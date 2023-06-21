@@ -1,3 +1,4 @@
+import Faq from '@/components/Faq';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import LocationContent from '@/components/LocationContent';
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
         <PlansContent />
         <LocationContent />
+        <Faq />
       </main>
     </div>
   );
