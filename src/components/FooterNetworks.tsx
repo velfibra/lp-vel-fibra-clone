@@ -1,0 +1,20 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
+const networks = [
+  { src: '/icons8-insta.svg', href: 'https://www.instagram.com/clickspeednet_/' },
+  { src: '/icons8-facebook.svg', href: 'https://www.facebook.com/clickspeednet' },
+  { src: '/icons8-twitter.svg', href: 'https://twitter.com/clickspeednet' },
+];
+
+export default function FooteriNetworks() {
+  return (
+    <div className=" mt-5 flex w-40 max-md:-ml-5 max-md:w-full max-md:justify-center">
+      {networks.map((network) => (
+        <Link key={network.src} href={network.href}>
+          <Image className="ml-2 w-9" src={network.src} alt={network.src} width={50} height={50} />
+        </Link>
+      ))}
+    </div>
+  );
+}
