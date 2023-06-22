@@ -8,7 +8,7 @@ export default function Faq() {
         Tire suas duvidas!
       </h1>
       <div className="mx-auto flex w-[80%] items-center justify-evenly max-lg:flex-col max-lg:gap-5">
-        <HelpSvg />
+        {/* <HelpSvg /> */}
         <div className="w-1/2 max-lg:w-screen max-lg:p-2">
           {texts.map(({ question, answer }) => (
             <FaqItem key={question} question={question} answer={answer} />

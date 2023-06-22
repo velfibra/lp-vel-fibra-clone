@@ -14,11 +14,11 @@ export default function PlansContent() {
           Fuja do básico! Escolha o melhor plano de internet para você
         </h3>
       </div>
-      <div className="grid grid-cols-3 gap-5 max-lg:grid-cols-1 rise animate-fadeInUp animation-delay-300">
+      <div className="grid grid-cols-3 gap-5 max-lg:grid-cols-1">
         {plans.map(({ h1, h2, text, bg, hover, icons, offer }) => (
-          <Card className={`flex flex-col gap-3 py-20 ${text}`} key={h1}>
+          <Card className={`rise flex animate-fadeInUp flex-col gap-3 py-20 ${text}`} key={h1}>
             {offer && (
-              <div className="absolute max-lg:ml-7 -mt-24 2xl:ml-[110px] xl:ml-[75px] w-[220px] animate-bounce rounded-xl border-[1px] border-black bg-primary p-3 px-5 text-center text-xl text-white">
+              <div className="absolute -mt-24 w-[220px] animate-bounce rounded-xl border-[1px] border-black bg-primary p-3 px-5 text-center text-xl text-white max-lg:ml-[31px] xl:ml-[75px] 2xl:ml-[110px]">
                 Melhor oferta
               </div>
             )}
