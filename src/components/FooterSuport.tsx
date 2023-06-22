@@ -11,29 +11,26 @@ export default function FooterSuport({ children }: Props) {
     <>
       <div className="-ml-3 flex-col max-lg:w-full max-md:mt-5 max-md:items-center">
         <h1 className="text-left font-bold max-lg:w-full max-md:mt-3 max-md:text-center">
-          SUPORTE
+          ATENDIMENTO
         </h1>
-        <div className="mt-3 flex max-lg:w-full max-md:justify-center">
+        <div className="mt-3 flex max-lg:w-full max-lg:justify-start">
           <MapPinIcon className="w-7" />
           <p className="ml-2">Rua Br. Igarapé Mirim, 935 - Guamá.</p>
         </div>
-        <div className="mt-3 flex max-lg:w-full max-md:mt-2 max-md:justify-center">
+        <div className="mt-3 flex max-lg:w-full max-lg:justify-start">
+          <MapPinIcon className="w-7" />
+          <p className="ml-2">R. Ajax de Oliveira, 672 - Bengui.</p>
+        </div>
+        <div className="mt-3 flex max-lg:w-full max-lg:justify-start max-md:mt-2">
           <PhoneIcon className="w-7" />
           <p className="ml-2">(91)3085-3190</p>
         </div>
-        <div className="mt-3 flex max-lg:w-full max-md:mt-2 max-md:justify-center">
+        <div className="mt-3 flex max-lg:w-full max-lg:justify-start max-md:mt-2">
           <EnvelopeIcon className="w-7" />
           <p className="ml-2">atendimento@clickspeed.net.br</p>
         </div>
-        <h1 className="mt-3 text-left font-bold max-lg:w-full max-md:mt-2 max-md:justify-center max-md:text-center ">
-          TRABALHE CONOSCO
-        </h1>
-        <div className="mt-3 flex max-lg:w-full max-md:justify-center">
-          <EnvelopeIcon className="w-7" />
-          <p className="ml-2">curriculo@clickspeed.net.br</p>
-        </div>
       </div>
-      <div className="ml-2 flex-col max-lg:w-full max-md:ml-0 max-md:justify-center">
+      <div className="ml-2 flex-col max-lg:w-full max-lg:justify-start max-md:ml-0">
         <h1 className="text-left font-bold max-md:mt-2 max-md:text-center">
           NOS SIGA NAS REDES SOCIAIS
         </h1>
@@ -51,10 +48,7 @@ export default function FooterSuport({ children }: Props) {
               height={500}
             />
           </Link>
-          <Link
-            href={'https://apps.apple.com/br/app/click-benef%C3%ADcios/id1623438889'}
-            target="_blank"
-          >
+          <Link href={'https://apps.apple.com/br/app/click-speed/id1522351159'} target="_blank">
             <Image
               className="ml-2 w-24 max-md:mb-5 max-md:w-52"
               src={'/disponivel-na-app-store-botao-1024x303.png'}

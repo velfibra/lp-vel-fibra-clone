@@ -21,9 +21,9 @@ export default function Faq() {
 
 const texts = [
   {
-    question: 'Oque é fibra ótica?',
+    question: 'Oque é fibra óptica?',
     answer:
-      'A fibra óptica é uma estrutura de vidro cilíndrica, transparente, flexível e com dimensões microscópicas, parecidas com um fio de cabelo. É uma forma de transmissão que permite o tráfego de dados com velocidades próximas à velocidade da luz. O sinal da fibra óptica é transmitido por meio de reflexões de raios laser ao longo de todo o cabo, atingindo uma capacidade de transmissão única.',
+      'A fibra ótica é uma estrutura de vidro cilíndrica, transparente, flexível e com dimensões microscópicas, parecidas com um fio de cabelo. É uma forma de transmissão que permite o tráfego de dados com velocidades próximas à velocidade da luz. O sinal da fibra óptica é transmitido por meio de reflexões de raios laser ao longo de todo o cabo, atingindo uma capacidade de transmissão única.',
   },
   {
     question: 'Por que a fibra é superior a outras tecnologias?',
