@@ -5,7 +5,6 @@ import axios from 'axios';
 //253346914a07d3fe50e97299e4063f10d063fc44
 
 const Form = () => {
-  const [title, setTitle] = useState('');
   const [value, setValue] = useState('');
   const [personName, setPersonName] = useState('');
   const [personEmail, setPersonEmail] = useState('');
@@ -39,7 +38,7 @@ const Form = () => {
 
       // Criar o negócio vinculado à pessoa
       const dealData = {
-        title,
+        title: personName,
         value,
         person_id: personId,
         pipeline_id: 2,
@@ -57,7 +56,6 @@ const Form = () => {
 
       console.log('Negócio criado com sucesso:', createDealResponse.data);
 
-      setTitle('');
       setValue('');
       setPersonName('');
       setPersonEmail('');
@@ -68,13 +66,6 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Título"
-        required
-      />
       <input
         type="text"
         value={value}
