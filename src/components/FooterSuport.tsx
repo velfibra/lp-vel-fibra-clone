@@ -25,10 +25,6 @@ export default function FooterSuport({ children }: Props) {
           <PhoneIcon className="w-7" />
           <p className="ml-2">(91)3085-3190</p>
         </div>
-        <div className="mt-3 flex max-lg:w-full max-lg:justify-start max-md:mt-2">
-          <EnvelopeIcon className="w-7" />
-          <p className="ml-2">atendimento@clickspeed.net.br</p>
-        </div>
       </div>
       <div className="ml-2 flex-col max-lg:w-full max-lg:justify-start max-md:ml-0">
         <h1 className="text-left font-bold max-md:mt-2 max-md:text-center">
