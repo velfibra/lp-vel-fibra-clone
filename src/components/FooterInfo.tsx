@@ -10,18 +10,18 @@ const links = [
 export default function FooterInfo() {
   return (
     <>
-      <div className="flex w-[25%] flex-col max-md:-ml-5 max-md:w-full max-md:items-center">
+      <div className="flex flex-col max-md:-ml-5 max-md:w-full max-md:items-center">
         <Image
           src={'/CLICK SPEED VERTICAL@4x 1.png'}
           alt="clickspeed logo white"
           width={200}
           height={200}
         />
-        <p className="w-60 font-semibold max-md:ml-5 max-md:w-full">
+        <p className="w-60 font-semibold max-lg:ml-10 max-lg:text-center max-md:w-full">
           Provedor de Internet. O melhor da internet na sua casa.
         </p>
       </div>
-      <div className="w-[25%] flex-col font-semibold max-md:w-full max-md:items-center">
+      <div className="flex-col font-semibold max-md:w-full max-md:items-center">
         <p className="ml-3 text-left font-bold  max-md:mt-5 max-md:text-center">OUTROS LINKS</p>
         <ul className="flex flex-col items-start  max-md:items-center max-md:text-xs">
           {links.map((link) => (

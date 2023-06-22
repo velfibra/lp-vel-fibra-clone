@@ -9,7 +9,7 @@ const networks = [
 
 export default function FooteriNetworks() {
   return (
-    <div className=" mt-5 flex w-40 max-md:-ml-5 max-md:w-full max-md:justify-center">
+    <div className=" mt-5 flex  max-md:-ml-5 max-md:w-full max-md:justify-center">
       {networks.map((network) => (
         <Link key={network.src} href={network.href}>
           <Image className="ml-2 w-9" src={network.src} alt={network.src} width={50} height={50} />
