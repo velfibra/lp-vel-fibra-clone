@@ -4,7 +4,10 @@ import HelpSvg from './HelpSvg';
 export default function Faq() {
   return (
     <section className="flex h-fit flex-col gap-5 p-6">
-      <h1 className="text-center text-3xl font-bold uppercase text-primary max-lg:text-2xl">
+      <h1
+        id="help"
+        className="text-center text-3xl font-bold uppercase text-primary max-lg:text-2xl"
+      >
         Tire suas duvidas!
       </h1>
       <div className="mx-auto flex w-[80%] items-center justify-evenly max-lg:flex-col max-lg:gap-6">

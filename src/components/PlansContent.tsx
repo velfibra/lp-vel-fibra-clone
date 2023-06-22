@@ -5,9 +5,12 @@ import Image from 'next/image';
 
 export default function PlansContent() {
   return (
-    <section className="mx-auto mb-10 max-w-[1580px] p-6 max-lg:w-full">
+    <section className="mx-auto mb-10 mt-5 max-w-[1580px] p-6 max-lg:w-full">
       <div className="mb-10">
-        <h1 className="rise animate-fadeInUp text-center text-3xl font-bold uppercase text-primary max-lg:text-2xl">
+        <h1
+          id="plan"
+          className="rise animate-fadeInUp text-center text-3xl font-bold uppercase text-primary max-lg:text-2xl"
+        >
           Conheça nossos planos
         </h1>
         <h3 className="rise animate-fadeInUp text-center text-xl max-lg:text-center max-lg:text-base">
