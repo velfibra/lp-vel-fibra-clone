@@ -55,10 +55,10 @@ export default function Modal({ isOpen, onClose, price, h1 }: ModalProps) {
         <div className="z-10 rounded-lg bg-white p-6 " ref={modalRef}>
           <div className="flex justify-end">
             <button
-              className="rounded-lg bg-secondary p-2 font-semibold text-white duration-500 hover:scale-105 hover:bg-primary"
+              className="rounded-lg bg-secondary px-3 py-1 font-semibold text-white duration-500 hover:scale-105 hover:bg-primary"
               onClick={onClose}
             >
-              Fechar
+              X
             </button>
           </div>
           <Form price={price} h1={h1} />
