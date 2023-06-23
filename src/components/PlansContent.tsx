@@ -5,7 +5,6 @@ import CardContent from './CardContent';
 import CardTitle from './CardTitle';
 import Image from 'next/image';
 import Modal from './Modal';
-import Form from './PlanForm';
 
 export default function PlansContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -51,8 +50,8 @@ export default function PlansContent() {
                 <h3 className="text-center text-xl font-semibold">Wi-fi Incluso</h3>
                 <hr className="h-[2px] bg-black/40" />
                 <div className="mt-10 flex justify-center gap-2">
-                  {icons?.map(({ src }) => (
-                    <Image key={src} src={src} alt="Beneficio Click" width={40} height={40} />
+                  {icons?.map(({ src, alt }) => (
+                    <Image key={src} src={src} alt={alt} width={40} height={40} />
                   ))}
                 </div>
                 <h3 className="my-10 text-center text-xl font-semibold">*Valor com pontualidade</h3>
@@ -80,7 +79,10 @@ const plans = [
     text: 'text-primary',
     bg: 'from-secondary to-secondary/60',
     hover: 'hover:bg-gradient-to-b hover:from-primary hover:to-primary/60',
-    icons: [{ src: '/4.png' }, { src: '/3.png' }],
+    icons: [
+      { src: '/4.png', alt: 'Click Beneficios' },
+      { src: '/3.png', alt: 'Lev Educa' },
+    ],
   },
   {
     h1: '450 MB',
@@ -90,7 +92,12 @@ const plans = [
     offer: true,
     bg: 'from-primary to-primary/60',
     hover: 'hover:bg-gradient-to-b hover:from-secondary hover:to-secondary/60',
-    icons: [{ src: '/4.png' }, { src: '/3.png' }, { src: '/5.png' }, { src: '/2.png' }],
+    icons: [
+      { src: '/4.png', alt: 'Click Beneficios' },
+      { src: '/3.png', alt: 'Lev Educa' },
+      { src: '/5.png', alt: 'Deezer' },
+      { src: '/2.png', alt: 'Plataforma Qualifica' },
+    ],
   },
   {
     h1: '650 MB',
@@ -100,11 +107,11 @@ const plans = [
     bg: 'from-secondary to-secondary/60',
     hover: 'hover:bg-gradient-to-b hover:from-primary hover:to-primary/60',
     icons: [
-      { src: '/4.png' },
-      { src: '/3.png' },
-      { src: '/5.png' },
-      { src: '/2.png' },
-      { src: '/1.png' },
+      { src: '/4.png', alt: 'Click Beneficios' },
+      { src: '/3.png', alt: 'Lev Educa' },
+      { src: '/5.png', alt: 'Deezer' },
+      { src: '/2.png', alt: 'Plataforma Qualifica' },
+      { src: '/1.png', alt: 'Streming Watch' },
     ],
   },
 ];
