@@ -1,4 +1,17 @@
+'use client';
+import { useState } from 'react';
+import Modal from './Modal';
+
 export default function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="flex h-[800px] flex-col bg-gray-500 max-lg:h-[500px]">
       <div className="ml-20 mt-20 h-fit text-7xl max-lg:ml-2 max-lg:mt-10 max-lg:text-2xl">
@@ -16,7 +29,10 @@ export default function Hero() {
           <h2 className="w-fit text-white max-lg:w-[90%]">
             a internet Fibra Ótica mais rapida de Belém!
           </h2>
-          <button className="mt-10 rounded-xl bg-secondary p-3 text-4xl font-semibold uppercase text-white shadow-md shadow-gray-800 duration-500 hover:scale-105 hover:bg-primary max-lg:mt-3 max-lg:text-xl">
+          <button
+            onClick={openModal}
+            className="mt-10 rounded-xl bg-secondary p-3 text-4xl font-semibold uppercase text-white shadow-md shadow-gray-800 duration-500 hover:scale-105 hover:bg-primary max-lg:mt-3 max-lg:text-xl"
+          >
             contratar agora
           </button>
         </div>
@@ -24,6 +40,7 @@ export default function Hero() {
       <h3 className="mt-44 animate-fadeInUp text-center text-3xl font-bold text-white animation-delay-1000 max-lg:mt-28 max-lg:text-lg">
         VIVA MUITO MAIS CONECTADO
       </h3>
+      <Modal price={'119,90'} h1={'450MB!'} isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 }
