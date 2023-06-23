@@ -3,7 +3,6 @@ import { useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 
-//253346914a07d3fe50e97299e4063f10d063fc44
 type Props = {
   price: string;
   h1: string;
@@ -86,7 +85,12 @@ const Form = ({ price, h1 }: Props) => {
             onChange={(e) => setPersonEmail(e.target.value)}
             placeholder="Email:"
             required
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
           />
+          {personEmail !== '' &&
+            !personEmail.match('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}') && (
+              <p className="text-sm text-red-500">Digite um e-mail válido.</p>
+            )}
           <input
             className="rounded-lg  bg-secondary/80 p-1 text-white placeholder:text-white/80 focus:bg-primary/80"
             type="text"
