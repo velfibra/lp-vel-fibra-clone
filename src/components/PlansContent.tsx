@@ -5,7 +5,7 @@ import CardContent from './CardContent';
 import CardTitle from './CardTitle';
 import Image from 'next/image';
 import Modal from './Modal';
-import Form from './TestForm';
+import Form from './PlanForm';
 
 export default function PlansContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
