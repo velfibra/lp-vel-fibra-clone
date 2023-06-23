@@ -5,7 +5,6 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import LocationContent from '@/components/LocationContent';
 import PlansContent from '@/components/PlansContent';
-import Form from '@/components/TestForm';
 
 export default function Home() {
   return (
