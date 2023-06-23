@@ -17,7 +17,7 @@ export default function Header() {
             ))}
           </ul>
         </nav>
-        <span className="flex text-xl max-2xl:ml-10">
+        <span className="-mr-24 flex text-xl max-2xl:-mr-10 max-2xl:ml-10">
           Compre pelo telefone: <p className="ml-1 font-bold">(91)3085-3190</p>
         </span>
       </div>
