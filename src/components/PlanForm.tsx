@@ -141,7 +141,7 @@ export default function PlanForm({ price, h1 }: Props) {
           />
           */}
           {inputs.map(({ name, placeHolder }) => (
-            <div key={name}>
+            <div key={name} className="flex flex-col">
               <input
                 className={clsx(
                   'rounded border p-2 outline-none',
