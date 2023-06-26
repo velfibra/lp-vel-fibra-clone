@@ -27,7 +27,7 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-export default function PlanFormR({ price, h1 }: Props) {
+export default function PlanForm({ price, h1 }: Props) {
   const {
     register,
     handleSubmit,
@@ -94,54 +94,22 @@ export default function PlanFormR({ price, h1 }: Props) {
           <h2 className="max-lg:w-[300px] max-lg:text-sm">
             Preencha o formulário para falar com nossa equipe
           </h2>
-          <input
-            className={clsx(
-              'rounded border p-2 outline-none',
-              errors.email ? 'border-red-700' : 'border-primary',
-            )}
-            type="text"
-            {...register('name', {
-              onBlur() {
-                trigger('name');
-              },
-            })}
-            placeholder="Nome completo:"
-          />
-          {errors.name && (
-            <span className="text-sm text-red-700 max-lg:w-[300px]">⛔ {errors.name.message}</span>
-          )}
-          <input
-            className={clsx(
-              'rounded border p-2 outline-none',
-              errors.email ? 'border-red-700' : 'border-primary',
-            )}
-            type="text"
-            {...register('email', {
-              onBlur() {
-                trigger('email');
-              },
-            })}
-            placeholder="Email:"
-          />
-          {errors.email && (
-            <span className="text-sm text-red-700 max-lg:w-[300px]">⛔ {errors.email.message}</span>
-          )}
-          <input
-            className={clsx(
-              'rounded border p-2 outline-none',
-              errors.email ? 'border-red-700' : 'border-primary',
-            )}
-            type="text"
-            {...register('phone', {
-              onBlur() {
-                trigger('phone');
-              },
-            })}
-            placeholder="Telefone:"
-          />
-          {errors.phone && (
-            <span className="text-sm text-red-700 max-lg:w-[300px]">⛔ {errors.phone.message}</span>
-          )}
+          {inputs.map(({ name, placeHolder }) => (
+            <input
+              key={name}
+              className={clsx(
+                'rounded border p-2 outline-none',
+                errors.email ? 'border-red-700' : 'border-primary',
+              )}
+              type="text"
+              {...register(`${name}`, {
+                onBlur() {
+                  trigger(`${name}`);
+                },
+              })}
+              placeholder={placeHolder}
+            />
+          ))}
           <button
             disabled={isSubmitting}
             className="mt-7 h-11 w-fit self-center rounded-lg bg-gradient-to-b from-secondary to-secondary/60 px-2 font-bold uppercase text-white shadow-md shadow-gray-500 duration-500 hover:scale-105 max-lg:w-[90%] max-lg:text-sm"
@@ -167,3 +135,9 @@ export default function PlanFormR({ price, h1 }: Props) {
     </form>
   );
 }
+
+const inputs = [
+  { name: 'name', placeHolder: 'Seu Nome Completo' },
+  { name: 'email', placeHolder: 'Seu Email' },
+  { name: 'phone', placeHolder: 'Seu Telefone' },
+] as const;
