@@ -13,7 +13,7 @@ export default function Hero() {
     setIsModalOpen(false);
   };
   return (
-    <div className="flex h-[800px] flex-col bg-gray-500 max-lg:h-[500px]">
+    <div className="flex h-[800px] flex-col bg-gray-500 max-xl:mt-20 max-lg:h-[500px]">
       <div className="ml-20 mt-20 h-fit text-7xl max-lg:ml-2 max-lg:mt-10 max-lg:text-2xl">
         <div className="animate-fadeInLeft animation-delay-300">
           <h1 className="text-white">Cansado de ficar</h1>
