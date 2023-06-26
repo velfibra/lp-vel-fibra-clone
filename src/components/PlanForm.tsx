@@ -90,7 +90,7 @@ export default function PlanForm({ price, h1 }: Props) {
     >
       {!openMessage ? (
         <div className="mx-auto mt-5 flex w-3/4 flex-col items-center gap-5 text-center text-lg font-bold max-lg:gap-3">
-          <h1 className="text-2xl max-lg:w-[300px] max-lg:text-lg">{`Legal! agora falta puco para você garantir nossa oferta de ${h1}!`}</h1>
+          <h1 className="text-2xl max-lg:w-[300px] max-lg:text-lg">{`Legal! agora falta pouco para você garantir nossa oferta de ${h1}!`}</h1>
           <h2 className="max-lg:w-[300px] max-lg:text-sm">
             Preencha o formulário para falar com nossa equipe
           </h2>
