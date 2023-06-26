@@ -94,52 +94,6 @@ export default function PlanForm({ price, h1 }: Props) {
           <h2 className="max-lg:w-[300px] max-lg:text-sm">
             Preencha o formulário para falar com nossa equipe
           </h2>
-          {/* <input
-            className={clsx(
-              'rounded border p-2 outline-none',
-              errors.email ? 'border-red-700' : 'border-primary',
-            )}
-            type="text"
-            {...register('name', {
-              onBlur() {
-                trigger('name');
-              },
-            })}
-            placeholder="Nome completo:"
-          />
-          {errors.name && (
-            <span className="text-sm text-red-700 max-lg:w-[300px]">⛔ {errors.name.message}</span>
-          )}
-          <input
-            className={clsx(
-              'rounded border p-2 outline-none',
-              errors.email ? 'border-red-700' : 'border-primary',
-            )}
-            type="text"
-            {...register('email', {
-              onBlur() {
-                trigger('email');
-              },
-            })}
-            placeholder="Email:"
-          />
-          {errors.email && (
-            <span className="text-sm text-red-700 max-lg:w-[300px]">⛔ {errors.email.message}</span>
-          )}
-          <input
-            className={clsx(
-              'rounded border p-2 outline-none',
-              errors.email ? 'border-red-700' : 'border-primary',
-            )}
-            type="text"
-            {...register('phone', {
-              onBlur() {
-                trigger('phone');
-              },
-            })}
-            placeholder="Telefone:"
-          />
-          */}
           {inputs.map(({ name, placeHolder }) => (
             <div key={name} className="flex flex-col">
               <input
