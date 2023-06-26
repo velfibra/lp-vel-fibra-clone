@@ -1,4 +1,8 @@
 'use client';
+import clsx from 'clsx';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 import { useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
@@ -8,22 +12,40 @@ type Props = {
   h1: string;
 };
 
-const Form = ({ price, h1 }: Props) => {
-  const [personName, setPersonName] = useState('');
-  const [personEmail, setPersonEmail] = useState('');
-  const [phone, setPhone] = useState('');
+const formSchema = z.object({
+  name: z
+    .string()
+    .nonempty('Este campo precisa ser preenchido')
+    .max(50, 'Limite máximo de 50 caracteres atingido'),
+  email: z
+    .string()
+    .nonempty('Este campo precisa ser preenchido')
+    .email('E-mail invalido!')
+    .toLowerCase(),
+  phone: z.string().nonempty('Este campo precisa ser preenchido'),
+});
+
+type FormData = z.infer<typeof formSchema>;
+
+export default function PlanFormR({ price, h1 }: Props) {
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    trigger,
+    formState: { errors, isSubmitting },
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+  });
   const [openMessage, setOpenMessage] = useState(false);
 
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-
+  const onSubmit = async (data: FormData) => {
     try {
       const personData = {
-        name: personName,
-        email: personEmail,
-        phone,
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
       };
-
       const createPersonResponse = await axios.post(
         'https://api.pipedrive.com/v1/persons',
         personData,
@@ -39,7 +61,7 @@ const Form = ({ price, h1 }: Props) => {
 
       const personId = createPersonResponse.data.data.id;
       const dealData = {
-        title: personName,
+        title: data.name,
         value: price,
         person_id: personId,
         pipeline_id: 2,
@@ -55,9 +77,6 @@ const Form = ({ price, h1 }: Props) => {
         },
       });
 
-      setPersonName('');
-      setPersonEmail('');
-      setPhone('');
       setOpenMessage(true);
     } catch (error) {
       console.error('Erro ao criar negócio:', error);
@@ -65,41 +84,66 @@ const Form = ({ price, h1 }: Props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="h-[500px] w-[450px] p-2 text-primary max-lg:w-[300px]">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="h-[600px] w-[450px] p-2 text-primary max-lg:h-[500px] max-lg:w-[300px]"
+    >
       {!openMessage ? (
-        <div className="mx-auto mt-5 flex w-3/4 flex-col items-center gap-5 text-center text-lg font-bold">
-          <h1 className="text-2xl max-lg:w-[300px] max-lg:text-xl">{`Legal! agora falta puco para você garantir nossa oferta de ${h1}!`}</h1>
-          <h2 className="max-lg:w-[300px]">Preencha o formulário para falar com nossa equipe</h2>
+        <div className="mx-auto mt-5 flex w-3/4 flex-col items-center gap-5 text-center text-lg font-bold max-lg:gap-3">
+          <h1 className="text-2xl max-lg:w-[300px] max-lg:text-lg">{`Legal! agora falta puco para você garantir nossa oferta de ${h1}!`}</h1>
+          <h2 className="max-lg:w-[300px] max-lg:text-sm">
+            Preencha o formulário para falar com nossa equipe
+          </h2>
           <input
-            className="rounded-lg  bg-secondary/80 p-1 text-white placeholder:text-white/80 focus:bg-primary/80"
-            type="text"
-            value={personName}
-            onChange={(e) => setPersonName(e.target.value)}
-            placeholder="Nome completo:"
-            required
-          />
-          <input
-            className="rounded-lg  bg-secondary/80 p-1 text-white placeholder:text-white/80 focus:bg-primary/80"
-            type="email"
-            value={personEmail}
-            onChange={(e) => setPersonEmail(e.target.value)}
-            placeholder="Email:"
-            required
-            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-          />
-          {personEmail !== '' &&
-            !personEmail.match('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}') && (
-              <p className="text-sm text-red-500">Digite um e-mail válido.</p>
+            className={clsx(
+              'rounded border p-2 outline-none',
+              errors.email ? 'border-red-700' : 'border-primary',
             )}
-          <input
-            className="rounded-lg  bg-secondary/80 p-1 text-white placeholder:text-white/80 focus:bg-primary/80"
             type="text"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            placeholder="Telefone:"
-            required
+            {...register('name', {
+              onBlur() {
+                trigger('name');
+              },
+            })}
+            placeholder="Nome completo:"
           />
+          {errors.name && (
+            <span className="text-sm text-red-700 max-lg:w-[300px]">⛔ {errors.name.message}</span>
+          )}
+          <input
+            className={clsx(
+              'rounded border p-2 outline-none',
+              errors.email ? 'border-red-700' : 'border-primary',
+            )}
+            type="text"
+            {...register('email', {
+              onBlur() {
+                trigger('email');
+              },
+            })}
+            placeholder="Email:"
+          />
+          {errors.email && (
+            <span className="text-sm text-red-700 max-lg:w-[300px]">⛔ {errors.email.message}</span>
+          )}
+          <input
+            className={clsx(
+              'rounded border p-2 outline-none',
+              errors.email ? 'border-red-700' : 'border-primary',
+            )}
+            type="text"
+            {...register('phone', {
+              onBlur() {
+                trigger('phone');
+              },
+            })}
+            placeholder="Telefone:"
+          />
+          {errors.phone && (
+            <span className="text-sm text-red-700 max-lg:w-[300px]">⛔ {errors.phone.message}</span>
+          )}
           <button
+            disabled={isSubmitting}
             className="mt-7 h-11 w-fit self-center rounded-lg bg-gradient-to-b from-secondary to-secondary/60 px-2 font-bold uppercase text-white shadow-md shadow-gray-500 duration-500 hover:scale-105 max-lg:w-[90%] max-lg:text-sm"
             type="submit"
           >
@@ -122,6 +166,4 @@ const Form = ({ price, h1 }: Props) => {
       )}
     </form>
   );
-};
-
-export default Form;
+}
