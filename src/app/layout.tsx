@@ -1,6 +1,8 @@
 import './globals.css';
 import Rise from '@/components/Rise';
 import { Inter } from 'next/font/google';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
+import CookieBanner from '@/components/CookieBanner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,8 +16,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-br" className="scroll-smooth">
+      <GoogleAnalytics GA_MEASUREMENT_ID="G-V2149R76YL" />
       <body className={inter.className}>
         {children}
+        <CookieBanner />
         <Rise />
       </body>
     </html>
