@@ -35,15 +35,15 @@ export default function CookieBanner() {
       <div className="text-center">
         <Link href="/info/cookies">
           <p className="text-gray-800">
-            Utilizamos<span className="font-bold text-sky-400">cookies</span> para garantir a melhor
-            experiência em nosso site.
+            Utilizamos<span className="font-bold text-secondary">cookies</span> para garantir a
+            melhor experiência em nosso site.
           </p>
         </Link>
       </div>
 
       <div className="flex gap-2">
         <button
-          className="rounded-lg bg-gray-900 px-5 py-2 text-white"
+          className="rounded-lg bg-primary px-5 py-2 text-white"
           onClick={() => setCookieConsent(true)}
         >
           Aceitar
