@@ -19,7 +19,7 @@ select:-webkit-autofill:hover {
 }
 
 body::-webkit-scrollbar-thumb {
-  border-radius: 8px;
+  border-radius: 5px;
   border: 4px solid transparent;
   background-clip: content-box;
   background-color: #e40046;
