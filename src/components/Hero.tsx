@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="animate-fadeInLeft text-4xl animation-delay-700 max-lg:text-lg">
           <h2 className="mt-4 w-fit text-white">Então vem para a Click Speed</h2>
           <h2 className="w-fit text-white max-lg:w-[90%]">
-            a internet Fibra Ótica mais rapida de Belém!
+            a internet Fibra Óptica mais rapida de Belém!
           </h2>
           <button
             onClick={openModal}
