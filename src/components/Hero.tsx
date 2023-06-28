@@ -26,7 +26,7 @@ export default function Hero() {
         </div>
         <div className="animate-fadeInLeft text-4xl animation-delay-700 max-lg:text-lg">
           <h2 className="mt-3 w-fit text-white text-shadow max-lg:w-[90%] xl:text-2xl 2xl:text-3xl">
-            Há 9 anos a melhor internet Fibra Óptica de Belém
+            Há 9 anos a melhor Fibra Óptica de Belém
           </h2>
           <button
             onClick={openModal}
