@@ -55,7 +55,7 @@ module.exports = {
         fadeIn: 'fadeIn 1.5s both',
       },
       backgroundImage: {
-        'hero-image': "url('/images/hero.jpg')",
+        'hero-image': "url('/banner.jpeg')",
         'hero-image-mobile': "url('/images/hero-mobile.jpg')",
       },
     },
