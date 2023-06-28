@@ -57,6 +57,7 @@ module.exports = {
       backgroundImage: {
         'hero-image': "url('/banner.jpg')",
         'hero-image-mobile': "url('/images/hero-mobile.jpg')",
+        'local-image': "url('/banner2.jpg')",
       },
     },
   },

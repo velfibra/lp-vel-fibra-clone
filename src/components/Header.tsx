@@ -28,6 +28,6 @@ export default function Header() {
 
 const links = [
   { name: 'Planos', link: '#plan' },
-  { name: 'Duvidas', link: '#help' },
+  { name: 'Dúvidas', link: '#help' },
   { name: 'Contatos', link: '#contact' },
 ];

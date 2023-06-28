@@ -8,7 +8,7 @@ export default function Faq() {
         id="help"
         className="text-center text-3xl font-bold uppercase text-primary max-lg:text-2xl"
       >
-        Tire suas duvidas!
+        Tire suas dúvidas!
       </h1>
       <div className="mx-auto flex w-[80%] items-center justify-evenly max-lg:flex-col max-lg:gap-6">
         {/* <HelpSvg /> */}
