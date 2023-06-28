@@ -18,7 +18,7 @@ export default function Header() {
           </ul>
         </nav>
         <span className="flex text-xl 2xl:-mr-10  2xl:ml-10">
-          Compre pelo telefone: <p className="ml-1 font-bold">(91)3085-3190</p>
+          Assine pelo telefone: <p className="ml-1 font-bold">(91)3085-3190</p>
         </span>
       </div>
       <MobileMenu />
