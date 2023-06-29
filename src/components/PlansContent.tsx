@@ -48,7 +48,7 @@ export default function PlansContent() {
               <h2 className="mb-5 w-full text-center text-5xl font-bold max-lg:text-2xl">{h2}</h2>
               <CardContent>
                 <h3 className="text-center text-xl font-semibold max-lg:text-base">
-                  Instalação gratuita
+                  Instalação gratuita em 24 horas**
                 </h3>
                 <hr className="mt-5 h-[2px] bg-black/40" />
                 <h3 className="text-center text-xl font-semibold max-lg:text-base">
@@ -60,13 +60,16 @@ export default function PlansContent() {
                     <Image key={src} src={src} alt={alt} width={40} height={40} />
                   ))}
                 </div>
-                <h3 className="my-10 text-center text-xl font-semibold max-lg:my-5 max-lg:text-base">
+                <h3 className="my-10 text-center text-xl font-semibold max-lg:my-2 max-lg:text-[10px]">
                   *Valor com pontualidade
+                </h3>
+                <h3 className="my-10 text-center text-xl font-semibold max-lg:my-2 max-lg:text-[10px]">
+                  **Consulte viabilidade
                 </h3>
               </CardContent>
               <button
                 onClick={() => openModal(price, h1)}
-                className={`h-14 w-[70%] self-center rounded-lg bg-gradient-to-b max-lg:w-[75%] ${bg} py-2 text-xl font-bold uppercase text-white shadow-md shadow-gray-500 duration-500 hover:scale-105 max-lg:mt-5 max-lg:h-11 max-lg:text-base ${hover}`}
+                className={`h-14 w-[70%] self-center rounded-lg bg-gradient-to-b max-lg:w-[75%] ${bg} py-2 text-xl font-bold uppercase text-white shadow-md shadow-gray-500 duration-500 hover:scale-105  max-lg:h-11 max-lg:text-base ${hover}`}
               >
                 contratar
               </button>
@@ -82,7 +85,7 @@ export default function PlansContent() {
 const plans = [
   {
     h1: '350 MB',
-    h2: 'R$99,90/Mês',
+    h2: 'R$99,90/Mês*',
     price: '99,90',
     text: 'text-primary',
     bg: 'from-secondary to-secondary/60',
@@ -94,7 +97,7 @@ const plans = [
   },
   {
     h1: '450 MB',
-    h2: 'R$119,90/Mês',
+    h2: 'R$119,90/Mês*',
     price: '119,90',
     text: 'text-secondary',
     offer: true,
@@ -109,7 +112,7 @@ const plans = [
   },
   {
     h1: '650 MB',
-    h2: 'R$139,90/Mês',
+    h2: 'R$139,90/Mês*',
     price: '139,90',
     text: 'text-primary',
     bg: 'from-secondary to-secondary/60',
