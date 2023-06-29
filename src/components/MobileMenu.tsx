@@ -2,6 +2,7 @@
 import { useState } from 'react';
 
 import Popper from './Popper';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -15,9 +16,11 @@ export default function MobileMenu() {
         aria-label="navigation menu"
         title="Menu"
       >
-        <div className="h-0.5 w-4 bg-gray-300" />
-        <div className="h-0.5 w-4 bg-gray-300" />
-        <div className="h-0.5 w-4 bg-gray-300" />
+        {open ? (
+          <XMarkIcon className="mt-1 w-8 rounded-md font-semibold text-white text-shadow" />
+        ) : (
+          <Bars3Icon className="mt-1 w-8 rounded-md font-semibold text-white text-shadow" />
+        )}
       </button>
       <Popper
         className="fixed top-20 z-30 m-0 w-full animate-fadeInDown border-t-2 border-primary bg-primary/90 font-bold uppercase text-white"
