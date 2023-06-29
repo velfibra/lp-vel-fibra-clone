@@ -27,10 +27,10 @@ export default function PlansContent() {
           id="plan"
           className="rise animate-fadeInUp text-center text-3xl font-bold uppercase text-primary max-lg:text-2xl"
         >
-          Conheça nossos planos
+          Melhor plano de internet
         </h1>
         <h3 className="rise animate-fadeInUp text-center text-xl max-lg:text-center max-lg:text-base">
-          Fuja do básico! Escolha o melhor plano de internet para você
+          Assine a melhor internet residencial banda larga com fibra ótica e Wi-Fi
         </h3>
       </div>
       <div className="grid grid-cols-3 gap-5 max-lg:grid-cols-1">
@@ -48,12 +48,10 @@ export default function PlansContent() {
               <h2 className="mb-5 w-full text-center text-5xl font-bold max-lg:text-2xl">{h2}</h2>
               <CardContent>
                 <h3 className="text-center text-xl font-semibold max-lg:text-base">
-                  Instalação gratuita em 24 horas**
+                  Instalação grátis em 24 horas**
                 </h3>
                 <hr className="mt-5 h-[2px] bg-black/40" />
-                <h3 className="text-center text-xl font-semibold max-lg:text-base">
-                  Wi-fi Incluso
-                </h3>
+                <h3 className="text-center text-xl font-semibold max-lg:text-base">Wi-fi Grátis</h3>
                 <hr className="h-[2px] bg-black/40" />
                 <div className="mt-10 flex justify-center gap-2 max-lg:mt-5">
                   {icons?.map(({ src, alt }) => (

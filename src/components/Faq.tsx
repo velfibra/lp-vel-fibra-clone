@@ -3,14 +3,17 @@ import HelpSvg from './HelpSvg';
 
 export default function Faq() {
   return (
-    <section className="flex h-fit flex-col gap-5 p-6">
+    <section className="flex h-fit flex-col gap-7 p-6">
       <h1
         id="help"
         className="text-center text-3xl font-bold uppercase text-primary max-lg:text-2xl"
       >
-        Tire suas dúvidas!
+        Tire suas dúvidas da melhor internet de Belém!
       </h1>
-      <div className="mx-auto flex w-[80%] items-center justify-evenly max-lg:flex-col max-lg:gap-6">
+      <h3 className="rise -mt-4 animate-fadeInUp text-center text-xl max-lg:text-center max-lg:text-base">
+        A Click Speed responde as principais perguntas sobre nossos serviços e cobertura.
+      </h3>
+      <div className="mx-auto my-5 flex w-[80%] items-center justify-evenly max-lg:flex-col max-lg:gap-6">
         {/* <HelpSvg /> */}
         <div className="w-1/2 max-lg:w-screen max-lg:p-5">
           {texts.map(({ question, answer }) => (
