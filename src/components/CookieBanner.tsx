@@ -35,7 +35,7 @@ export default function CookieBanner() {
       <div className="text-center">
         <Link href="/info/cookies">
           <p className="text-gray-800">
-            Utilizamos<span className="font-bold text-secondary">cookies</span> para garantir a
+            Utilizamos<pre className="font-bold text-secondary"> cookies </pre> para garantir a
             melhor experiência em nosso site.
           </p>
         </Link>
