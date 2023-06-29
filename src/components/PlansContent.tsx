@@ -47,24 +47,26 @@ export default function PlansContent() {
               <CardTitle>{h1}</CardTitle>
               <h2 className="mb-5 w-full text-center text-5xl font-bold max-lg:text-2xl">{h2}</h2>
               <CardContent>
-                <h3 className="text-center text-xl font-semibold max-lg:text-lg">
+                <h3 className="text-center text-xl font-semibold max-lg:text-base">
                   Instalação gratuita
                 </h3>
                 <hr className="mt-5 h-[2px] bg-black/40" />
-                <h3 className="text-center text-xl font-semibold max-lg:text-lg">Wi-fi Incluso</h3>
+                <h3 className="text-center text-xl font-semibold max-lg:text-base">
+                  Wi-fi Incluso
+                </h3>
                 <hr className="h-[2px] bg-black/40" />
                 <div className="mt-10 flex justify-center gap-2 max-lg:mt-5">
                   {icons?.map(({ src, alt }) => (
                     <Image key={src} src={src} alt={alt} width={40} height={40} />
                   ))}
                 </div>
-                <h3 className="my-10 text-center text-xl font-semibold max-lg:my-5 max-lg:text-lg">
+                <h3 className="my-10 text-center text-xl font-semibold max-lg:my-5 max-lg:text-base">
                   *Valor com pontualidade
                 </h3>
               </CardContent>
               <button
                 onClick={() => openModal(price, h1)}
-                className={`h-14 w-[70%] self-center rounded-lg bg-gradient-to-b max-lg:w-[75%] ${bg} py-2 text-xl font-bold uppercase text-white shadow-md shadow-gray-500 duration-500 hover:scale-105 max-lg:text-lg ${hover}`}
+                className={`h-14 w-[70%] self-center rounded-lg bg-gradient-to-b max-lg:w-[75%] ${bg} py-2 text-xl font-bold uppercase text-white shadow-md shadow-gray-500 duration-500 hover:scale-105 max-lg:mt-5 max-lg:h-11 max-lg:text-base ${hover}`}
               >
                 contratar
               </button>
