@@ -51,7 +51,7 @@ export default function PlanForm({ price, h1 }: Props) {
         personData,
         {
           params: {
-            api_token: '253346914a07d3fe50e97299e4063f10d063fc44',
+            api_token: '222f88de28024b4e36d1328030212ae6079389f4',
           },
           headers: {
             'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ export default function PlanForm({ price, h1 }: Props) {
 
       await axios.post('https://api.pipedrive.com/v1/deals', dealData, {
         params: {
-          api_token: '253346914a07d3fe50e97299e4063f10d063fc44',
+          api_token: '222f88de28024b4e36d1328030212ae6079389f4',
         },
         headers: {
           'Content-Type': 'application/json',
