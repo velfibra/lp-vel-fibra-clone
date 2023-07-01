@@ -23,7 +23,13 @@ export default function WhatsAppButton() {
       >
         <WhatsAppIcon />
       </button>
-      <Modal price={'99,90'} h1={'350 MB'} isOpen={isModalOpen} onClose={closeModal} />
+      <Modal
+        price={'99,90'}
+        h1={'350 MB'}
+        id="form_350mb"
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </>
   );
 }
