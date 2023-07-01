@@ -8,6 +8,12 @@ export default function CookieBanner() {
   const [cookieConsent, setCookieConsent] = useState(false);
 
   useEffect(() => {
+    const storedCookieConsent = getLocalStorage('cookie_consent', false);
+
+    setCookieConsent(storedCookieConsent);
+  }, [setCookieConsent]);
+
+  useEffect(() => {
     const newValue = cookieConsent ? 'granted' : 'denied';
 
     ReactGA.event({
@@ -22,13 +28,13 @@ export default function CookieBanner() {
     console.log('Cookie Consent:', cookieConsent);
   }, [cookieConsent]);
 
+  if (cookieConsent) {
+    return null; // Se o consentimento já foi dado, não exiba o banner
+  }
+
   return (
-    <div
-      className={`fixed bottom-0 left-0 right-0
-                        mx-auto my-10  ${cookieConsent != null ? 'hidden' : 'flex'} z-10 
-                        max-w-max flex-col items-center justify-between gap-4 rounded-lg bg-gray-300 px-3 py-3  
-                         shadow sm:flex-row md:max-w-screen-sm md:px-4`}
-    >
+    // Se o consentimento ainda não foi dado, exiba o banner
+    <div className="fixed bottom-0 left-0 right-0 z-10 mx-auto my-10 max-w-max flex-col items-center justify-between gap-4 rounded-lg bg-gray-300 px-3 py-3 shadow sm:flex-row md:max-w-screen-sm md:px-4">
       <div className="text-center">
         <Link href="/info/cookies">
           <p className="text-gray-800">
