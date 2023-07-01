@@ -39,7 +39,13 @@ export default function Hero() {
       <h3 className="animate-fadeInUp text-center font-bold uppercase text-white text-shadow animation-delay-1000 max-lg:mt-[220px] max-lg:text-lg xl:mt-20 xl:text-2xl 2xl:mt-[280px] 2xl:text-3xl">
         faça parte dessa história
       </h3>
-      <Modal price={'119,90'} h1={'450MB!'} isOpen={isModalOpen} onClose={closeModal} />
+      <Modal
+        price={'119,90'}
+        h1={'450MB!'}
+        id="form_450mb"
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </div>
   );
 }
