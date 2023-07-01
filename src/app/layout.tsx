@@ -16,6 +16,12 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-br" className="scroll-smooth">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="pVoqKhYcW4rD9ZFppSPc0Dq6IUPZ5KqziBXFcVzcTGA"
+        />
+      </head>
       <GoogleAnalytics GA_MEASUREMENT_ID="G-V2149R76YL" />
       <body className={inter.className}>
         {children}
