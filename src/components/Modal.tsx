@@ -7,8 +7,9 @@ interface ModalProps {
   onClose: () => void;
   price: string;
   h1: string;
+  id: string;
 }
-export default function Modal({ isOpen, onClose, price, h1 }: ModalProps) {
+export default function Modal({ isOpen, onClose, price, h1, id }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -61,7 +62,7 @@ export default function Modal({ isOpen, onClose, price, h1 }: ModalProps) {
               X
             </button>
           </div>
-          <Form price={price} h1={h1} />
+          <Form id={id} price={price} h1={h1} />
         </div>
       </div>
     </>

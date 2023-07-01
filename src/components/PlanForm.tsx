@@ -10,6 +10,7 @@ import Image from 'next/image';
 type Props = {
   price: string;
   h1: string;
+  id: string;
 };
 
 const formSchema = z.object({
@@ -27,7 +28,7 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-export default function PlanForm({ price, h1 }: Props) {
+export default function PlanForm({ id, price, h1 }: Props) {
   const {
     register,
     handleSubmit,
@@ -85,6 +86,7 @@ export default function PlanForm({ price, h1 }: Props) {
 
   return (
     <form
+      id={id}
       onSubmit={handleSubmit(onSubmit)}
       className="h-[600px] w-[450px] p-2 text-primary max-lg:h-[500px] max-lg:w-[300px]"
     >

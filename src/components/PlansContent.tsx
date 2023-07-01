@@ -10,11 +10,13 @@ export default function PlansContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [priceItem, setPriceItem] = useState('');
   const [title, setTitle] = useState('');
+  const [idForm, setIdForm] = useState('');
 
-  const openModal = (price: string, h1: string) => {
+  const openModal = (price: string, h1: string, id: string) => {
     setIsModalOpen(true);
     setPriceItem(price);
     setTitle(h1);
+    setIdForm(id);
   };
 
   const closeModal = () => {
@@ -34,7 +36,7 @@ export default function PlansContent() {
         </h3>
       </div>
       <div className="grid grid-cols-3 gap-5 max-lg:grid-cols-1">
-        {plans.map(({ h1, h2, price, text, bg, hover, icons, offer }) => (
+        {plans.map(({ h1, h2, id, price, text, bg, hover, icons, offer }) => (
           <div key={h1}>
             <Card
               className={`rise flex animate-fadeInUp flex-col gap-3 py-20 max-lg:h-[500px] max-lg:py-10 ${text}`}
@@ -66,13 +68,19 @@ export default function PlansContent() {
                 </h3>
               </CardContent>
               <button
-                onClick={() => openModal(price, h1)}
+                onClick={() => openModal(price, h1, id)}
                 className={`h-14 w-[70%] self-center rounded-lg bg-gradient-to-b max-lg:w-[75%] ${bg} py-2 text-xl font-bold uppercase text-white shadow-md shadow-gray-500 duration-500 hover:scale-105  max-lg:h-11 max-lg:text-base ${hover}`}
               >
                 contratar
               </button>
             </Card>
-            <Modal price={priceItem} h1={title} isOpen={isModalOpen} onClose={closeModal} />
+            <Modal
+              price={priceItem}
+              h1={title}
+              id={idForm}
+              isOpen={isModalOpen}
+              onClose={closeModal}
+            />
           </div>
         ))}
       </div>
@@ -83,6 +91,7 @@ export default function PlansContent() {
 const plans = [
   {
     h1: '350 MB',
+    id: 'form_350mb',
     h2: 'R$99,90/Mês*',
     price: '99,90',
     text: 'text-primary',
@@ -95,6 +104,7 @@ const plans = [
   },
   {
     h1: '450 MB',
+    id: 'form_450mb',
     h2: 'R$119,90/Mês*',
     price: '119,90',
     text: 'text-secondary',
@@ -110,6 +120,7 @@ const plans = [
   },
   {
     h1: '650 MB',
+    id: 'form_650mb',
     h2: 'R$139,90/Mês*',
     price: '139,90',
     text: 'text-primary',
