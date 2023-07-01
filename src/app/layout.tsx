@@ -44,9 +44,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             width="0"
             className="hidden"
           ></iframe>
+          <CookieBanner />
         </noscript>
         {children}
-        {/* <CookieBanner /> */}
         <Rise />
       </body>
     </html>
