@@ -5,7 +5,7 @@ import GoogleAnalytics from '@/components/GoogleAnalytics';
 import CookieBanner from '@/components/CookieBanner';
 
 const inter = Inter({ subsets: ['latin'] });
-
+//
 export const metadata = {
   title: 'Click Speed – Tenha todo o poder da internet 100% Fibra Óptica',
   description:
