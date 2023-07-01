@@ -7,7 +7,6 @@ interface ModalProps {
   onClose: () => void;
   price: string;
   h1: string;
-  id: string;
 }
 export default function Modal({ isOpen, onClose, price, h1, id }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
