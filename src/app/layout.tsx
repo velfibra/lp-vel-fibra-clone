@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           content="pVoqKhYcW4rD9ZFppSPc0Dq6IUPZ5KqziBXFcVzcTGA"
         />
       </head>
-      <div className="container">
+      <>
         <Script id="google-analytics">
           {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -34,8 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           })(window,document,'script','dataLayer','GTM-WHX92B2');
         `}
         </Script>
-      </div>
-      <GoogleAnalytics GA_MEASUREMENT_ID="G-V2149R76YL" />
+        <GoogleAnalytics GA_MEASUREMENT_ID="GTM-WHX92B2" />
+      </>
       <body className={inter.className}>
         <noscript>
           <iframe
