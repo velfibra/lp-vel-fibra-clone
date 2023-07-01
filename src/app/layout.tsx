@@ -34,9 +34,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           })(window,document,'script','dataLayer','GTM-WHX92B2');
         `}
         </Script>
-        <GoogleAnalytics GA_MEASUREMENT_ID="GTM-WHX92B2" />
       </>
+      <GoogleAnalytics GA_MEASUREMENT_ID="GTM-WHX92B2" />
       <body className={inter.className}>
+        <CookieBanner />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WHX92B2"
@@ -44,7 +45,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             width="0"
             className="hidden"
           ></iframe>
-          <CookieBanner />
         </noscript>
         {children}
         <Rise />
