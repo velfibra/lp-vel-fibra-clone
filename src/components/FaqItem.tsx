@@ -35,7 +35,7 @@ export default function FaqItem({ question, answer }: FAQItemProps) {
       </div>
       <hr className="h-[2px] bg-secondary" />
       <div
-        className={`transition-max-heightn overflow-hidden ${expanded ? 'max-h-full' : 'max-h-0'}`}
+        className={`overflow-hidden duration-300 ${expanded ? 'max-h-full' : 'max-h-0'}`}
         style={{ maxHeight: expanded ? contentHeight : 0 }}
       >
         <div
