@@ -36,7 +36,7 @@ export default function Hero() {
           </button>
         </div>
       </div>
-      <h3 className="animate-fadeInUp text-center font-bold uppercase text-white text-shadow animation-delay-1000 max-lg:mt-[220px] max-lg:text-lg xl:mt-20 xl:text-2xl 2xl:mt-[280px] 2xl:text-3xl">
+      <h3 className="animate-fadeInUp text-center font-bold uppercase text-white text-shadow animation-delay-1000 max-lg:mt-[200px] max-lg:text-lg xl:mt-20 xl:text-2xl 2xl:mt-[280px] 2xl:text-3xl">
         faça parte dessa história
       </h3>
       <Modal
