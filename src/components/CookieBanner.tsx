@@ -2,27 +2,31 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getLocalStorage, setLocalStorage } from '@/app/lib/StorageHelper';
-import ReactGA from 'react-ga';
+import TagManager from 'react-gtm-module';
 
-ReactGA.initialize('G-V2149R76YL');
+TagManager.initialize({
+  gtmId: 'GTM-WHX92B2',
+});
 
 export default function CookieBanner() {
   const [cookieConsent, setCookieConsent] = useState(false);
 
   useEffect(() => {
     const storedCookieConsent = getLocalStorage('cookie_consent', false);
-
     setCookieConsent(storedCookieConsent);
   }, [setCookieConsent]);
 
   useEffect(() => {
     const newValue = cookieConsent ? 'granted' : 'denied';
 
-    ReactGA.event({
+    const event = {
+      event: 'CookieConsentUpdate',
       category: 'Cookie Consent',
       action: 'Update',
       label: newValue,
-    });
+    };
+
+    TagManager.dataLayer({ dataLayer: event });
 
     setLocalStorage('cookie_consent', cookieConsent);
   }, [cookieConsent]);

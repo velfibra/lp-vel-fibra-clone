@@ -1,9 +1,7 @@
 import './globals.css';
 import Rise from '@/components/Rise';
 import { Inter } from 'next/font/google';
-import GoogleAnalytics from '@/components/GoogleAnalytics';
 import CookieBanner from '@/components/CookieBanner';
-import Head from 'next/head';
 import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -35,9 +33,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}
         </Script>
       </>
-      {/* <GoogleAnalytics GA_MEASUREMENT_ID="GTM-WHX92B2" /> */}
       <body className={inter.className}>
-        {/* <CookieBanner /> */}
+        <CookieBanner />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WHX92B2"
