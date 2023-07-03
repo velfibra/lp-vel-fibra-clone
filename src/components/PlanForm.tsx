@@ -134,8 +134,12 @@ export default function PlanForm({ id, price, h1 }: Props) {
           />
           <p className="max-lg:w-[300px]">
             Sua solicitação foi enviada com sucesso, em breve um dos nossos consultores irá entrar
-            em contato com você.
+            em contato com você,
           </p>
+          <span className="text-sm">
+            *Caso queira mudar de plano, não será preciso preencher o formulário novamente, informe
+            durante o atendimento.*
+          </span>
         </div>
       )}
     </form>
