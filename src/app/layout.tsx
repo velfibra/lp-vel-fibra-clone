@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}
         </Script>
       </>
-      <GoogleAnalytics GA_MEASUREMENT_ID="GTM-WHX92B2" />
+      {/* <GoogleAnalytics GA_MEASUREMENT_ID="GTM-WHX92B2" /> */}
       <body className={inter.className}>
         {/* <CookieBanner /> */}
         <noscript>
