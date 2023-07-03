@@ -2,11 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getLocalStorage, setLocalStorage } from '@/app/lib/StorageHelper';
-import TagManager from 'react-gtm-module';
-
-TagManager.initialize({
-  gtmId: 'GTM-WHX92B2',
-});
+import TagManager, { TagManagerArgs } from 'react-gtm-module';
 
 export default function CookieBanner() {
   const [cookieConsent, setCookieConsent] = useState(false);
@@ -14,30 +10,42 @@ export default function CookieBanner() {
   useEffect(() => {
     const storedCookieConsent = getLocalStorage('cookie_consent', false);
     setCookieConsent(storedCookieConsent);
-  }, [setCookieConsent]);
+  }, []);
 
   useEffect(() => {
+    if (typeof document !== 'undefined') {
+      TagManager.initialize({
+        gtmId: 'GTM-WHX92B2', // Substitua pelo seu ID do Google Tag Manager
+      });
+    }
+
     const newValue = cookieConsent ? 'granted' : 'denied';
 
-    const event = {
-      event: 'CookieConsentUpdate',
-      category: 'Cookie Consent',
-      action: 'Update',
-      label: newValue,
-    };
-
-    TagManager.dataLayer({ dataLayer: event });
+    // Enviar evento para o Google Tag Manager
+    if (typeof document !== 'undefined') {
+      const eventArgs: TagManagerArgs = {
+        dataLayer: {
+          event: 'CookieConsentUpdate',
+          category: 'Cookie Consent',
+          action: 'Update',
+          label: newValue,
+        },
+        dataLayerName: 'dataLayer',
+        gtmId: '',
+      };
+      TagManager.dataLayer(eventArgs);
+    }
 
     setLocalStorage('cookie_consent', cookieConsent);
   }, [cookieConsent]);
 
+  if (cookieConsent) {
+    return null; // Se o consentimento já foi dado, não exiba o banner
+  }
+
   return (
     // Se o consentimento ainda não foi dado, exiba o banner
-    <div
-      className={`${
-        cookieConsent ? 'hidden' : 'fixed'
-      } bottom-0 left-0 right-0 z-10 mx-auto my-10 max-w-max flex-col items-center justify-between gap-4 rounded-lg bg-gray-300 px-3 py-3 shadow sm:flex-row md:max-w-screen-sm md:px-4`}
-    >
+    <div className="fixed bottom-0 left-0 right-0 z-10 mx-auto my-10 max-w-max flex-col items-center justify-between gap-4 rounded-lg bg-gray-300 px-3 py-3 shadow sm:flex-row md:max-w-screen-sm md:px-4">
       <div className="text-center">
         <Link href="/info/cookies">
           <p className="text-gray-800">
