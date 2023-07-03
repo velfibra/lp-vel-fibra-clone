@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { getLocalStorage, setLocalStorage } from '@/app/lib/StorageHelper';
 import ReactGA from 'react-ga';
 
+ReactGA.initialize('G-V2149R76YL');
+
 export default function CookieBanner() {
   const [cookieConsent, setCookieConsent] = useState(false);
 
@@ -23,9 +25,6 @@ export default function CookieBanner() {
     });
 
     setLocalStorage('cookie_consent', cookieConsent);
-
-    // Para testes
-    console.log('Cookie Consent:', cookieConsent);
   }, [cookieConsent]);
 
   if (cookieConsent) {
