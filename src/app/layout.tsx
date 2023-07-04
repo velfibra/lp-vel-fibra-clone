@@ -1,10 +1,10 @@
 import './globals.css';
 import Rise from '@/components/Rise';
-import { Inter } from 'next/font/google';
 import CookieBanner from '@/components/CookieBanner';
 import Script from 'next/script';
+import { Figtree } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const figtree = Figtree({ subsets: ['latin'] });
 //
 export const metadata = {
   title: 'Click Speed – Tenha todo o poder da internet 100% Fibra Óptica',
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}
         </Script>
       </>
-      <body className={inter.className}>
+      <body className={figtree.className}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WHX92B2"
