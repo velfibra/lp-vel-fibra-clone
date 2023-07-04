@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 import { data } from 'autoprefixer';
+import { fetchEmail, postPerson } from '@/utils/server';
 
 type Props = {
   price: string;
@@ -42,28 +43,6 @@ export default function PlanForm({ id, price, h1 }: Props) {
   const [openMessage, setOpenMessage] = useState(false);
   const [message, setMessage] = useState(false);
 
-  const fetchEmail = async (email: string) => {
-    try {
-      const response = await axios.get('https://api.pipedrive.com/v1/persons/search', {
-        params: {
-          term: email,
-          api_token: '222f88de28024b4e36d1328030212ae6079389f4',
-          fields: 'email',
-        },
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      const items = await response.data.data.items[0].item.primary_email;
-      const foundEmail = items === email;
-      return !!foundEmail; // Retorna true se o email existir, caso contrário, retorna false
-    } catch (error) {
-      console.error('Erro ao buscar email:', error);
-      return false;
-    }
-  };
-
   const onSubmit = async (data: FormData) => {
     try {
       const emailExist = await fetchEmail(data.email);
@@ -74,20 +53,23 @@ export default function PlanForm({ id, price, h1 }: Props) {
         email: data.email,
         phone: data.phone,
       };
-      const createPersonResponse = await axios.post(
-        'https://api.pipedrive.com/v1/persons',
-        personData,
-        {
-          params: {
-            api_token: '222f88de28024b4e36d1328030212ae6079389f4',
-          },
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        },
-      );
 
-      const personId = createPersonResponse.data.data.id;
+      const personResponse = await postPerson(personData);
+      // const createPersonResponse = await axios.post(
+      //   'https://api.pipedrive.com/v1/persons',
+      //   personData,
+      //   {
+      //     params: {
+      //       api_token: '222f88de28024b4e36d1328030212ae6079389f4',
+      //     },
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //   },
+      // );
+
+      const personId = personResponse;
+
       const dealData = {
         title: data.name,
         value: price,
