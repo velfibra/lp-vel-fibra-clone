@@ -1,5 +1,19 @@
 import axios from 'axios';
 
+type personData = {
+  name: string;
+  email: string;
+  phone: string;
+};
+
+type dealData = {
+  title: string;
+  value: string;
+  person_id: any;
+  pipeline_id: number;
+  visible_to: number;
+};
+
 const fetchEmail = async (email: string) => {
   try {
     const response = await axios.get('https://api.pipedrive.com/v1/persons/search', {
@@ -22,12 +36,6 @@ const fetchEmail = async (email: string) => {
   }
 };
 
-type personData = {
-  name: string;
-  email: string;
-  phone: string;
-};
-
 const postPerson = async (data: personData) => {
   try {
     const createPersonResponse = await axios.post('https://api.pipedrive.com/v1/persons', data, {
@@ -44,5 +52,19 @@ const postPerson = async (data: personData) => {
     return false;
   }
 };
+const postDeal = async (data: dealData) => {
+  try {
+    await axios.post('https://api.pipedrive.com/v1/deals', data, {
+      params: {
+        api_token: '222f88de28024b4e36d1328030212ae6079389f4',
+      },
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  } catch (error) {
+    console.error('Erro ao criar negócio:', error);
+  }
+};
 
-export { fetchEmail, postPerson };
+export { fetchEmail, postPerson, postDeal };
