@@ -34,7 +34,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
       </>
       <body className={inter.className}>
-        <CookieBanner />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WHX92B2"
@@ -43,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             className="hidden"
           ></iframe>
         </noscript>
+        {/* <CookieBanner /> */}
         {children}
         <Rise />
       </body>
