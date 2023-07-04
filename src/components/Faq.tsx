@@ -41,4 +41,9 @@ const texts = [
     answer:
       'É a velocidade de recebimento de dados (como um arquivo, vídeo, etc) de outro computador ou servidor para um computador local através da Internet. Usuários domésticos tendem a realizar mais downloads do que uploads.',
   },
+  {
+    question: 'A ClickSpeed oferece uma conexão estável para jogos online?',
+    answer:
+      'A ClickSpeed é um provedor de internet que se orgulha de oferecer uma conexão estável e de alta velocidade, ideal para jogos online. Nossa infraestrutura de rede avançada e tecnologia de ponta garantem baixa latência e velocidades rápidas de download e upload, proporcionando uma experiência suave e sem interrupções para os jogadores',
+  },
 ];
