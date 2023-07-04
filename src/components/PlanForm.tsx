@@ -126,8 +126,8 @@ export default function PlanForm({ id, price, h1 }: Props) {
         </form>
       ) : (
         <p className="mt-5 w-[100%] text-center text-lg font-semibold text-primary">
-          Já estamos com seu cadastro, aguarde nosso contato ou busque atendimento via Suporte:
-          3085-3190
+          Já estamos analisando sua viabilidade, aguarde nosso contato ou busque atendimento via
+          Suporte: 3085-3190
         </p>
       )}
     </>
