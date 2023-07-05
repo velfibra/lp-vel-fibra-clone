@@ -35,6 +35,6 @@ const awards = [
   {
     src: '/Frame(2).svg',
     alt: 'premio de melhor satisfação',
-    description: 'A nossa prioridade é sua satisfação',
+    description: 'A nossa prioridade é sua satisfação!',
   },
 ];
