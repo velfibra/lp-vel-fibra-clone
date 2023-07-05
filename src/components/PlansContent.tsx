@@ -58,7 +58,7 @@ export default function PlansContent() {
                 <div className="mt-10 flex justify-center gap-2 max-lg:mt-5">
                   {icons?.map(({ src, alt }) => (
                     <Image
-                      className="rounded-full shadow-md shadow-gray-600"
+                      className="rounded-full shadow-md shadow-gray-600 hover:scale-110"
                       key={src}
                       src={src}
                       alt={alt}
