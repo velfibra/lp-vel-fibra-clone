@@ -37,7 +37,7 @@ export default function FooterSuport({ children }: Props) {
         <div className="mt-5 flex max-lg:-ml-4 max-lg:w-full max-md:flex-col max-md:items-center">
           <Link href={'https://play.google.com/store/search?q=clickspeed&c=apps'} target="_blank">
             <Image
-              className="ml-2 w-24 max-md:mb-5 max-md:w-52"
+              className="ml-2 w-24 hover:scale-110 max-md:mb-5 max-md:w-52"
               src={'/disponivel-google-play-badge-1-1536x455.png'}
               alt="icon-insta"
               width={500}
@@ -46,7 +46,7 @@ export default function FooterSuport({ children }: Props) {
           </Link>
           <Link href={'https://apps.apple.com/br/app/click-speed/id1522351159'} target="_blank">
             <Image
-              className="ml-2 w-24 max-md:mb-5 max-md:w-52"
+              className="ml-2 w-24 hover:scale-110 max-md:mb-5 max-md:w-52"
               src={'/disponivel-na-app-store-botao-1024x303.png'}
               alt="icon-insta"
               width={500}
