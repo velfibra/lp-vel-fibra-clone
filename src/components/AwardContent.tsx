@@ -13,7 +13,7 @@ export default function AwardContent() {
         {awards.map(({ src, alt, description }) => (
           <div className="flex flex-col items-center gap-5" key={alt}>
             <Image src={src} alt={alt} width={300} height={300} />
-            <h2 className="ml-10 w-full text-left text-gray-600">{description}</h2>
+            <h2 className="-mr-28 w-full text-left text-gray-600">{description}</h2>
           </div>
         ))}
       </div>
