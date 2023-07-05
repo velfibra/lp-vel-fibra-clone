@@ -57,7 +57,14 @@ export default function PlansContent() {
                 <hr className="h-[2px] bg-black/40" />
                 <div className="mt-10 flex justify-center gap-2 max-lg:mt-5">
                   {icons?.map(({ src, alt }) => (
-                    <Image key={src} src={src} alt={alt} width={40} height={40} />
+                    <Image
+                      className="rounded-full shadow-md shadow-gray-600"
+                      key={src}
+                      src={src}
+                      alt={alt}
+                      width={45}
+                      height={45}
+                    />
                   ))}
                 </div>
                 <h3 className="my-10 text-center text-xl font-semibold max-lg:my-2 max-lg:text-[10px]">
