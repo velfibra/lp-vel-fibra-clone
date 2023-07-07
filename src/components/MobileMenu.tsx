@@ -42,6 +42,7 @@ export default function MobileMenu() {
 
 const links = [
   { name: 'Planos', link: '#plan' },
+  { name: 'Cobertura', link: '#coverage' },
   { name: 'Duvidas', link: '#help' },
   { name: 'Contatos', link: '#contact' },
 ];
