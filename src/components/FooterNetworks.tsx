@@ -11,7 +11,7 @@ export default function FooteriNetworks() {
   return (
     <div className=" mt-5 flex  max-md:-ml-5 max-md:w-full max-md:justify-center">
       {networks.map((network) => (
-        <Link key={network.src} href={network.href}>
+        <Link key={network.src} href={network.href} target="_blank">
           <Image
             className="ml-2 w-9 hover:scale-110 hover:brightness-125"
             src={network.src}
