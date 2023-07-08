@@ -31,9 +31,9 @@ export default function PlansContent() {
         >
           Melhor plano de internet
         </h1>
-        <h3 className="rise animate-fadeInUp text-center text-xl max-lg:text-center max-lg:text-base">
+        <h2 className="rise animate-fadeInUp text-center text-xl max-lg:text-center max-lg:text-base">
           Assine a melhor internet residencial banda larga com fibra ótica e Wi-Fi
-        </h3>
+        </h2>
       </div>
       <div className="grid grid-cols-3 gap-5 max-lg:grid-cols-1">
         {plans.map(({ h1, h2, id, price, text, bg, hover, icons, offer }) => (

@@ -10,9 +10,9 @@ export default function Faq() {
       >
         Tire suas dúvidas da melhor internet de Belém!
       </h1>
-      <h3 className="-mt-4 text-center text-xl max-lg:text-center max-lg:text-base">
+      <h2 className="-mt-4 text-center text-xl max-lg:text-center max-lg:text-base">
         A Click Speed responde as principais perguntas sobre nossos serviços e cobertura.
-      </h3>
+      </h2>
       <div className="mx-auto my-5 flex w-[80%] items-center justify-evenly max-lg:flex-col max-lg:gap-6">
         {/* <HelpSvg /> */}
         <div className="w-1/2 max-lg:w-screen max-lg:p-5">
