@@ -4,7 +4,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useState } from 'react';
-import Image from 'next/image';
 import { fetchEmail, postDeal, postPerson } from '@/utils/server';
 import SuceffullyMessage from './SucessfullyMessage';
 
