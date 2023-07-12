@@ -6,6 +6,7 @@ import { z } from 'zod';
 import { useState } from 'react';
 import Image from 'next/image';
 import { fetchEmail, postDeal, postPerson } from '@/utils/server';
+import SuceffullyMessage from './SucessfullyMessage';
 
 type Props = {
   price: string;
@@ -32,7 +33,6 @@ export default function PlanForm({ id, price, h1 }: Props) {
   const {
     register,
     handleSubmit,
-    setValue,
     trigger,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
@@ -109,19 +109,7 @@ export default function PlanForm({ id, price, h1 }: Props) {
               </button>
             </div>
           ) : (
-            <div className="my-10 flex flex-col items-center gap-5 text-center text-lg font-semibold">
-              <Image
-                src={'/CLICK SPEED VERTICAL@4x 1.png'}
-                alt="logo da clickSpeed"
-                width={200}
-                height={200}
-              />
-              <p className="max-lg:w-[300px]">
-                Sua solicitação foi enviada com sucesso, em breve um dos nossos consultores irá
-                entrar em contato com você,
-              </p>
-              <span className="mt-20 text-sm">{message}</span>
-            </div>
+            <SuceffullyMessage />
           )}
         </form>
       ) : (
