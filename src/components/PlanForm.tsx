@@ -83,7 +83,7 @@ export default function PlanForm({ id, price, h1 }: Props) {
                 <div key={name} className="flex flex-col">
                   <input
                     className={clsx(
-                      'rounded border p-2 outline-none',
+                      'w-[300px] rounded border p-2 outline-none placeholder:text-base max-lg:w-[250px]',
                       errors.email ? 'border-red-700' : 'border-primary',
                     )}
                     type="text"
