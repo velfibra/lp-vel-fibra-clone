@@ -1,11 +1,10 @@
 'use client';
 import clsx from 'clsx';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
+import { useForm, validate, resolver } from '@/hooks/useForm';
 import { useState } from 'react';
 import { fetchEmail, postDeal, postPerson } from '@/utils/server';
 import SuceffullyMessage from './SucessfullyMessage';
+import TextField from './TextField';
 
 type Props = {
   price: string;
@@ -13,34 +12,29 @@ type Props = {
   id: string;
 };
 
-const formSchema = z.object({
-  name: z
-    .string()
-    .nonempty('Este campo precisa ser preenchido')
-    .max(50, 'Limite máximo de 50 caracteres atingido'),
-  email: z
-    .string()
-    .nonempty('Este campo precisa ser preenchido')
-    .email('E-mail invalido!')
-    .toLowerCase(),
-  phone: z.string().nonempty('Este campo precisa ser preenchido'),
-});
+interface FormInputs {
+  email: string;
+  name: string;
+  phone: string;
+}
 
-type FormData = z.infer<typeof formSchema>;
+const schema = {
+  name: validate()
+    .required('Campo obrigatório')
+    .min(3, 'O campo precisa ter no mínimo 3 letras')
+    .max(50, 'Limite máximo de 50 caracteres atingido'),
+  email: validate().required('Campo obrigatório').email('Email inválido'),
+  phone: validate().min(10, 'Número de telefone inválido').max(12, 'Número de telefone inválido'),
+};
 
 export default function PlanForm({ id, price, h1 }: Props) {
-  const {
-    register,
-    handleSubmit,
-    trigger,
-    formState: { errors, isSubmitting },
-  } = useForm<FormData>({
-    resolver: zodResolver(formSchema),
+  const { register, handleSubmit, errors, isSubmitting, setValue } = useForm<FormInputs>({
+    resolver: resolver(schema),
   });
   const [openMessage, setOpenMessage] = useState(false);
   const [message, setMessage] = useState(false);
 
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = async (data: FormInputs) => {
     const emailExist = await fetchEmail(data.email);
     if (emailExist) return setMessage(true);
 
@@ -79,24 +73,12 @@ export default function PlanForm({ id, price, h1 }: Props) {
               <h2 className="max-lg:w-[300px] max-lg:text-sm">
                 Preencha o formulário para falar com nossa equipe
               </h2>
-              {inputs.map(({ name, placeHolder }) => (
-                <div key={name} className="flex flex-col">
-                  <input
-                    className={clsx(
-                      'w-[300px] rounded border p-2 outline-none placeholder:text-base max-lg:w-[250px]',
-                      errors.email ? 'border-red-700' : 'border-primary',
-                    )}
-                    type="text"
-                    {...register(`${name}`, {
-                      onBlur() {
-                        trigger(`${name}`);
-                      },
-                    })}
-                    placeholder={placeHolder}
-                  />
-                  {errors[name] && (
-                    <span className="text-xs text-red-700">⛔ {errors[name]?.message}</span>
-                  )}
+              {inputs.map(({ name, placeHolder, ...props }) => (
+                <div key={name} className="flex w-full flex-col">
+                  <TextField {...register(name)} error={Boolean(errors[name])} {...props}>
+                    {placeHolder}
+                  </TextField>
+                  {errors[name] && <span className="text-xs text-red-700">⛔ {errors[name]}</span>}
                 </div>
               ))}
               <button
@@ -122,7 +104,7 @@ export default function PlanForm({ id, price, h1 }: Props) {
 }
 
 const inputs = [
-  { name: 'name', placeHolder: 'Seu Nome Completo' },
-  { name: 'email', placeHolder: 'Seu Email' },
-  { name: 'phone', placeHolder: 'Seu Telefone' },
+  { name: 'name', placeHolder: 'Nome' },
+  { name: 'email', placeHolder: 'Email' },
+  { name: 'phone', placeHolder: 'Telefone' },
 ] as const;
