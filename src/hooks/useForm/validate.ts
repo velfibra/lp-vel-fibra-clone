@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 interface Validation {
   func: (...args: any[]) => boolean;
   message: string;
