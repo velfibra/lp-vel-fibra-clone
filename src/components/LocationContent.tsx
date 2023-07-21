@@ -1,6 +1,6 @@
 export default function LocationContent() {
   return (
-    <section className="max-lg:h-[580px] xl:h-[500px] 2xl:h-[600px]">
+    <section className="rise animate-fadeInUp max-lg:h-[580px] xl:h-[500px] 2xl:h-[600px]">
       <h1
         id="plan"
         className="rise mb-5 animate-fadeInUp text-center text-3xl font-bold uppercase text-primary max-lg:text-2xl"
