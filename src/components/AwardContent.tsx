@@ -5,7 +5,7 @@ export default function AwardContent() {
     <section>
       <h1
         id="help"
-        className="text-center text-3xl font-bold uppercase text-primary max-lg:w-[95%] max-lg:text-2xl"
+        className="mx-auto text-center text-3xl font-bold uppercase text-primary max-lg:w-[95%] max-lg:text-2xl"
       >
         A Click Speed é o provedor de internet mais premiado de Belém!
       </h1>
@@ -13,7 +13,7 @@ export default function AwardContent() {
         {awards.map(({ src, alt, description }) => (
           <div className="flex flex-col items-center gap-5" key={alt}>
             <Image src={src} alt={alt} width={300} height={300} />
-            <h2 className="-mr-28 w-full text-left text-gray-600">{description}</h2>
+            <h2 className="-mr-14 w-full text-left text-gray-600 xl:-mr-28">{description}</h2>
           </div>
         ))}
       </div>
