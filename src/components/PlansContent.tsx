@@ -81,6 +81,9 @@ export default function PlansContent() {
           </div>
         ))}
       </div>
+      <p className="my-10 text-center font-semibold text-white">
+        *Valor válido somente com pontualidade no pagamento.
+      </p>
     </section>
   );
 }
