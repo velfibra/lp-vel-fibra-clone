@@ -14,7 +14,7 @@ export default function Card({ children, className, flat = false, style, trimmed
       style={style}
       className={clsx(
         className,
-        'w-full border-[1px] border-black text-sm',
+        'w-full shadow-md shadow-black/80',
         flat || 'rounded-lg',
         trimmed || 'p-5',
       )}

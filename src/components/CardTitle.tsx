@@ -6,7 +6,7 @@ type Props = {
 export default function CardTitle({ children, href }: Props) {
   return (
     <h1
-      className="mb-5 w-full text-center text-6xl font-bold max-lg:mb-3 max-lg:text-4xl"
+      className="absolute top-0 mx-4 -mt-6 w-[80%] rounded-full bg-white text-center text-5xl font-bold text-secondary max-lg:mb-3 max-lg:text-4xl"
       id={href}
     >
       {children}
