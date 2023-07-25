@@ -15,7 +15,7 @@ export default function Hero() {
   };
   return (
     <div className="flex items-center bg-hero-image bg-cover max-xl:mt-20 max-lg:h-[500px] xl:h-[520px] 2xl:h-[700px]">
-      <div className="-mt-10  h-fit text-shadow max-lg:mt-5 max-lg:text-lg xl:text-3xl 2xl:ml-20 2xl:text-8xl">
+      <div className="-mt-10  h-fit text-shadow max-lg:mt-5 max-lg:text-lg xl:text-6xl 2xl:ml-20 2xl:text-8xl">
         <h1 className="rise ml-10 w-[90%] animate-fadeInLeft font-semibold text-white">
           Chega de reiniciar o modem toda hora!
         </h1>
