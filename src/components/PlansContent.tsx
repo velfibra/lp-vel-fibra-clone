@@ -35,7 +35,7 @@ export default function PlansContent() {
           Escolha sua Internet banda larga e tenha wi-fi para toda a Família!
         </h2>
       </div>
-      <div className="mx-auto flex justify-between xl:w-[90%] 2xl:w-[60%]">
+      <div className="mx-auto flex justify-between max-lg:flex-col xl:w-[90%] 2xl:w-[60%]">
         {plans.map(({ h1, h2, id, price, mt, bg, bgButton, hover, icons, offer }) => (
           <div key={h1}>
             <Card
@@ -103,7 +103,7 @@ const plans = [
   {
     h1: '450 MB',
     id: 'form_450mb',
-    mt: '-mt-7',
+    mt: 'xl:-mt-7',
     h2: 'R$119,90/Mês*',
     price: '119,90',
     text: 'text-secondary',
