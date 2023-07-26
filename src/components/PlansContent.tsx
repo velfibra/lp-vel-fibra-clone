@@ -31,7 +31,7 @@ export default function PlansContent() {
         >
           Melhor plano de internet de Belém
         </h1>
-        <h2 className="rise mb-28 mt-5 animate-fadeInUp text-center text-2xl text-white max-lg:text-center max-lg:text-base">
+        <h2 className="rise mt-5 animate-fadeInUp text-center text-2xl text-white max-lg:text-center max-lg:text-base xl:mb-28">
           Escolha sua Internet banda larga e tenha wi-fi para toda a Família!
         </h2>
       </div>
@@ -39,19 +39,19 @@ export default function PlansContent() {
         {plans.map(({ h1, h2, id, price, mt, bg, bgButton, hover, icons, offer }) => (
           <div key={h1}>
             <Card
-              className={`rise my-5 flex ${mt} h-[450px] w-[350px] animate-fadeInUp flex-col gap-3 bg-${bg} py-10 text-white max-lg:h-[500px] max-lg:py-10`}
+              className={`rise my-5 flex ${mt} h-[450px] w-[350px] animate-fadeInUp flex-col gap-3 bg-${bg} py-10 text-white max-lg:h-[450px]`}
             >
               <CardTitle>{h1}</CardTitle>
-              <h2 className="w-full text-center text-4xl font-bold max-lg:text-2xl ">{h2}</h2>
+              <h2 className="w-full text-center text-4xl font-bold">{h2}</h2>
               <CardContent>
-                <h3 className="text-center text-xl font-semibold max-lg:text-base">
+                <h3 className="text-center text-xl font-semibold">
                   Instalação grátis em 24 horas**
                 </h3>
-                <h3 className="text-center text-xl font-semibold max-lg:text-base">Wi-fi Grátis</h3>
-                <div className="mt-5 flex justify-center gap-2 max-lg:mt-5">
+                <h3 className="text-center text-xl font-semibold">Wi-fi Grátis</h3>
+                <div className="mt-5 flex justify-center gap-2">
                   {icons?.map(({ src, alt }) => (
                     <Image
-                      className="rounded-full shadow-md shadow-gray-600 hover:scale-110"
+                      className="rounded-full shadow-md shadow-gray-600 hover:scale-110 max-lg:my-5"
                       key={src}
                       src={src}
                       alt={alt}
@@ -60,13 +60,13 @@ export default function PlansContent() {
                     />
                   ))}
                 </div>
-                <h3 className="my-10 text-center text-xl font-semibold max-lg:my-2 max-lg:text-[10px]">
+                <h3 className="my-10 text-center text-xl font-semibold max-lg:my-2">
                   **Consulte viabilidade
                 </h3>
               </CardContent>
               <button
                 onClick={() => openModal(price, h1, id)}
-                className={`h-14 w-[70%] self-center rounded-full bg-gradient-to-b max-lg:w-[75%] ${bgButton} py-2 text-xl font-bold uppercase text-white shadow-md shadow-black/80 duration-500 hover:scale-105  max-lg:h-11 max-lg:text-base ${hover}`}
+                className={`h-14 w-[70%] self-center rounded-full bg-gradient-to-b max-lg:w-[75%] ${bgButton} py-2 text-xl font-bold uppercase text-white shadow-md shadow-black/80 duration-500 hover:scale-105 ${hover}`}
               >
                 contratar
               </button>
