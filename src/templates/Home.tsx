@@ -15,9 +15,9 @@ export default function Home() {
       <main>
         <Hero />
         <PlansContent />
+        <AwardContent />
         <LocationContent />
         <Faq />
-        <AwardContent />
       </main>
       <Footer />
       <div className="mt-5 bg-primary p-1 text-center  text-gray-200">

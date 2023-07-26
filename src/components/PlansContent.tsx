@@ -23,7 +23,7 @@ export default function PlansContent() {
     setIsModalOpen(false);
   };
   return (
-    <section className="mx-auto mb-10 p-6 max-lg:w-full">
+    <section className="mx-auto  p-6 max-lg:w-full">
       <div className="mb-10">
         <h1
           id="plan"
@@ -81,7 +81,7 @@ export default function PlansContent() {
           </div>
         ))}
       </div>
-      <p className="my-10 text-center font-semibold text-white">
+      <p className="mt-10 text-center font-semibold text-white">
         *Valor válido somente com pontualidade no pagamento.
       </p>
     </section>
