@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import LocationContent from '@/components/LocationContent';
 import PlansContent from '@/components/PlansContent';
+import SVAComponent from '@/components/SVAComponent';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <main>
         <Hero />
         <PlansContent />
+        <SVAComponent />
         <AwardContent />
         <LocationContent />
         <Faq />
