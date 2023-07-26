@@ -14,18 +14,18 @@ export default function SVAComponent() {
           <div className=" mt-2 flex flex-col max-lg:my-10">
             {awards.map(({ src, alt, description }) => (
               <div
-                className="flex items-center gap-5 max-lg:w-[90%] max-lg:flex-col xl:my-2 2xl:my-5"
+                className="rise flex animate-fadeInLeft items-center gap-5 max-lg:w-[90%] max-lg:flex-col xl:my-2 2xl:my-5"
                 key={alt}
               >
                 <Image src={src} alt={alt} width={150} height={194} />
-                <p className="-mr-14 text-left font-semibold max-lg:text-lg xl:-mr-28 xl:w-[70%]">
+                <p className="-mr-14 h-auto text-left font-semibold max-lg:text-lg xl:-mr-28 xl:w-[70%]">
                   {description}
                 </p>
               </div>
             ))}
           </div>
         </div>
-        <div className="xl:w-1/2">
+        <div className="rise animate-fadeIn animation-delay-300 xl:w-1/2">
           <Image
             src={'/IMG-BENEFICIOS (1).png'}
             width={961}

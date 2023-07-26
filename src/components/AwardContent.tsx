@@ -6,6 +6,7 @@ export default function AwardContent() {
       <div className="mx-auto flex w-[80%] items-center max-lg:flex-col">
         <div className="w-1/2 max-lg:hidden">
           <Image
+            className="rise animate-fadeIn animation-delay-300"
             src={'/IMG-COBERTURA.png'}
             width={961}
             height={932}
@@ -21,7 +22,10 @@ export default function AwardContent() {
           </h1>
           <div className="mx-auto mt-2 flex flex-col">
             {awards.map(({ src, alt, description }) => (
-              <div className="flex items-center gap-5 max-lg:w-[90%] xl:my-2 2xl:my-5" key={alt}>
+              <div
+                className="rise flex animate-fadeInRight items-center gap-5 max-lg:w-[90%] xl:my-2 2xl:my-5"
+                key={alt}
+              >
                 <Image
                   className="max-lg:w-[70px] xl:h-[110px] xl:w-[80px] 2xl:h-[100] 2xl:w-[100]"
                   src={src}
