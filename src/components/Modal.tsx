@@ -6,7 +6,7 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   price: string;
-  h1: string;
+  h1?: string;
   id: string;
 }
 export default function Modal({ isOpen, onClose, price, h1, id }: ModalProps) {

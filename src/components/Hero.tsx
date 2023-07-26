@@ -45,13 +45,7 @@ export default function Hero() {
         width={800}
         height={735}
       />
-      <Modal
-        price={'119,90'}
-        h1={'450MB!'}
-        id="form_450mb"
-        isOpen={isModalOpen}
-        onClose={closeModal}
-      />
+      <Modal price={'119,90'} id="form_450mb" isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 }

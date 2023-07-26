@@ -8,7 +8,7 @@ import TextField from './TextField';
 
 type Props = {
   price: string;
-  h1: string;
+  h1?: string;
   id: string;
 };
 
@@ -33,6 +33,13 @@ export default function PlanForm({ id, price, h1 }: Props) {
   });
   const [openMessage, setOpenMessage] = useState(false);
   const [message, setMessage] = useState(false);
+  const [chosenPrice, setChosenPrice] = useState(price);
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (price: string) => {
+    setIsChecked(!isChecked);
+    setChosenPrice(price);
+  };
 
   const onSubmit = async (data: FormInputs) => {
     const emailExist = await fetchEmail(data.email);
@@ -49,7 +56,7 @@ export default function PlanForm({ id, price, h1 }: Props) {
 
     const dealData = {
       title: data.name,
-      value: price,
+      value: chosenPrice,
       person_id: personId,
       pipeline_id: 2,
       visible_to: 3,
@@ -69,7 +76,14 @@ export default function PlanForm({ id, price, h1 }: Props) {
         >
           {!openMessage ? (
             <div className="mx-auto mt-5 flex w-3/4 flex-col items-center gap-5 text-center text-lg font-bold max-lg:gap-3">
-              <h1 className="text-2xl max-lg:w-[300px] max-lg:text-lg">{`Legal! agora falta pouco para você garantir nossa oferta de ${h1}!`}</h1>
+              {h1 ? (
+                <h1 className="text-2xl max-lg:w-[300px] max-lg:text-lg">{`Legal! agora falta pouco para você garantir nossa oferta de ${h1}!`}</h1>
+              ) : (
+                <h1 className="text-2xl max-lg:w-[300px] max-lg:text-lg">
+                  Legal! Agora falta pouco para assinar sua internet!
+                </h1>
+              )}
+
               <h2 className="max-lg:w-[300px] max-lg:text-sm">
                 Preencha o formulário para falar com nossa equipe
               </h2>
@@ -81,6 +95,21 @@ export default function PlanForm({ id, price, h1 }: Props) {
                   {errors[name] && <span className="text-xs text-red-700">⛔ {errors[name]}</span>}
                 </div>
               ))}
+              {!h1 && (
+                <div className="flex w-full justify-evenly">
+                  {prices.map(({ plan, price }) => (
+                    <label htmlFor="" key={plan}>
+                      {plan}
+                      <input
+                        className="w-6"
+                        type="radio"
+                        name="option"
+                        onChange={() => handleCheckboxChange(price)}
+                      />
+                    </label>
+                  ))}
+                </div>
+              )}
               <button
                 disabled={isSubmitting}
                 className="mt-7 h-11 w-fit self-center rounded-lg bg-gradient-to-b from-secondary to-secondary/60 px-2 font-bold uppercase text-white shadow-md shadow-gray-500 duration-500 hover:scale-105 max-lg:w-[90%] max-lg:text-sm"
@@ -108,3 +137,9 @@ const inputs = [
   { name: 'email', placeHolder: 'Email' },
   { name: 'phone', placeHolder: 'Telefone' },
 ] as const;
+
+const prices = [
+  { plan: `350MB`, price: '99,90' },
+  { plan: `450MB`, price: '119,90' },
+  { plan: `650MB`, price: '139,90' },
+];
