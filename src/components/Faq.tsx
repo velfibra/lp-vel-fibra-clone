@@ -3,10 +3,10 @@ import HelpSvg from './HelpSvg';
 
 export default function Faq() {
   return (
-    <section className="my-20 flex h-fit flex-col gap-7 p-6">
+    <section className="my-20 flex h-fit flex-col gap-7 p-6 text-white">
       <h1
         id="help"
-        className="text-center text-3xl font-bold uppercase text-primary max-lg:text-2xl"
+        className="text-center text-3xl font-bold uppercase text-shadow max-lg:text-2xl"
       >
         Tire suas dúvidas da melhor internet de Belém!
       </h1>
@@ -27,19 +27,14 @@ export default function Faq() {
 
 const texts = [
   {
-    question: 'Oque é fibra óptica?',
+    question: 'Se eu contratar a internet no meio do mês, terei que pagar o valor do mês inteiro?',
     answer:
-      'A fibra ótica é uma estrutura de vidro cilíndrica, transparente, flexível e com dimensões microscópicas, parecidas com um fio de cabelo. É uma forma de transmissão que permite o tráfego de dados com velocidades próximas à velocidade da luz. O sinal da fibra óptica é transmitido por meio de reflexões de raios laser ao longo de todo o cabo, atingindo uma capacidade de transmissão única.',
+      'Se você contratar a Click Speed no meio ou final do mês, você irá pagar apenas o valor proporcional de consumo da sua internet fibra ótica.',
   },
   {
-    question: 'Por que a fibra é superior a outras tecnologias?',
+    question: 'Como saber se a Click atende no meu endereço?',
     answer:
-      'Velocidade de transmissão de dados é maior que de outras tecnologias. Maior estabilidade de sinal. Não sofre interferências de transmissão',
-  },
-  {
-    question: 'Oque é a velocidade de Download?',
-    answer:
-      'É a velocidade de recebimento de dados (como um arquivo, vídeo, etc) de outro computador ou servidor para um computador local através da Internet. Usuários domésticos tendem a realizar mais downloads do que uploads.',
+      'Basta informar o seu CEP, o número da sua residência, o seu nome e o seu celular em nossas Redes Sociais e Whatsapp. Com essas informações, nossos consultores conseguem verificar a cobertura e descobrir os planos disponíveis na sua região.',
   },
   {
     question: 'A ClickSpeed oferece uma conexão estável para jogos online?',

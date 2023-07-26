@@ -33,7 +33,7 @@ export default function FaqItem({ question, answer }: FAQItemProps) {
           &#9660;
         </span>
       </div>
-      <hr className="h-[2px] bg-secondary" />
+      <hr className="h-[1px] bg-secondary" />
       <div
         className={`overflow-hidden duration-300 ${expanded ? 'max-h-full' : 'max-h-0'}`}
         style={{ maxHeight: expanded ? contentHeight : 0 }}
