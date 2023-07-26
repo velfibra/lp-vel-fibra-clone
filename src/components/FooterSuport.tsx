@@ -17,10 +17,6 @@ export default function FooterSuport({ children }: Props) {
           <MapPinIcon className="w-7" />
           <p className="ml-2">Rua Br. Igarapé Mirim, 935 - Guamá.</p>
         </div>
-        <div className="mt-3 flex max-lg:w-full max-lg:justify-start">
-          <MapPinIcon className="w-7" />
-          <p className="ml-2">R. Ajax de Oliveira, 672 - Bengui.</p>
-        </div>
         <div className="mt-3 flex max-lg:w-full max-lg:justify-start max-md:mt-2">
           <PhoneIcon className="w-7" />
           <p className="ml-2">(91)3085-3190</p>
