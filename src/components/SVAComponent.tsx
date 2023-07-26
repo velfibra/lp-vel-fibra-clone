@@ -7,22 +7,25 @@ export default function SVAComponent() {
         <div className="mx-auto flex flex-col max-lg:mt-5 xl:mt-20 xl:w-[30%]">
           <h1
             id="help"
-            className="text-left font-bold text-shadow max-lg:text-xl xl:text-2xl 2xl:text-5xl"
+            className="text-center text-5xl font-bold text-white text-shadow max-lg:text-2xl"
           >
             Viva a experiência de ter as vantagens da Click Speed
           </h1>
-          <div className=" mt-2 flex flex-col">
+          <div className=" mt-2 flex flex-col max-lg:my-10">
             {awards.map(({ src, alt, description }) => (
-              <div className="flex items-center gap-5 max-lg:w-[90%] xl:my-2 2xl:my-5" key={alt}>
+              <div
+                className="flex items-center gap-5 max-lg:w-[90%] max-lg:flex-col xl:my-2 2xl:my-5"
+                key={alt}
+              >
                 <Image src={src} alt={alt} width={150} height={194} />
-                <p className="-mr-14 w-[70%] text-left font-semibold max-lg:text-lg xl:-mr-28">
+                <p className="-mr-14 text-left font-semibold max-lg:text-lg xl:-mr-28 xl:w-[70%]">
                   {description}
                 </p>
               </div>
             ))}
           </div>
         </div>
-        <div className="w-1/2 max-lg:hidden">
+        <div className="xl:w-1/2">
           <Image
             src={'/IMG-BENEFICIOS (1).png'}
             width={961}

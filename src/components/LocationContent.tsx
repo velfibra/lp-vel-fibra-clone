@@ -1,7 +1,7 @@
 export default function LocationContent() {
   return (
-    <section className="rise animate-fadeInUp max-lg:h-[580px] xl:mx-auto xl:h-[500px] xl:w-[80%] 2xl:h-[600px]">
-      <h1 className="rise mb-5 animate-fadeInUp text-center text-3xl font-bold uppercase text-primary max-lg:text-2xl">
+    <section className="rise my-20 animate-fadeInUp max-lg:h-[580px] xl:mx-auto xl:h-[500px] xl:w-[80%] 2xl:h-[600px]">
+      <h1 className="rise mb-5 animate-fadeInUp text-center text-3xl font-bold uppercase text-white max-lg:text-2xl">
         Estamos por toda Belém!
       </h1>
       <iframe
