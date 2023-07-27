@@ -98,7 +98,10 @@ const plans = [
     bg: 'secondary',
     bgButton: 'from-primary to-primary/80',
     hover: 'hover:bg-gradient-to-b hover:from-[#1A0530] hover:to-[#1A0530]/60',
-    icons: [{ src: '/3.png', alt: 'Lev Educa' }],
+    icons: [
+      { src: '/4.png', alt: 'Click Beneficios' },
+      { src: '/3.png', alt: 'Lev Educa' },
+    ],
   },
   {
     h1: '450 MB',
@@ -112,6 +115,7 @@ const plans = [
     bgButton: 'from-secondary to-secondary/60',
     hover: 'hover:bg-gradient-to-b hover:from-[#1A0530] hover:to-[#1A0530]/60',
     icons: [
+      { src: '/4.png', alt: 'Click Beneficios' },
       { src: '/3.png', alt: 'Lev Educa' },
       { src: '/5.png', alt: 'Deezer' },
       { src: '/2.png', alt: 'Plataforma Qualifica' },
@@ -127,6 +131,7 @@ const plans = [
     bgButton: 'from-primary to-primary/80',
     hover: 'hover:bg-gradient-to-b hover:from-[#1A0530] hover:to-[#1A0530]/60',
     icons: [
+      { src: '/4.png', alt: 'Click Beneficios' },
       { src: '/3.png', alt: 'Lev Educa' },
       { src: '/5.png', alt: 'Deezer' },
       { src: '/2.png', alt: 'Plataforma Qualifica' },
