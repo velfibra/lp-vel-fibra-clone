@@ -5,10 +5,7 @@ export default function SVAComponent() {
     <section className="mx-auto text-white">
       <div className="mx-auto flex w-[80%] items-center max-lg:flex-col">
         <div className="mx-auto flex flex-col max-lg:mt-5 xl:mt-20 xl:w-[30%]">
-          <h1
-            id="help"
-            className="text-left text-5xl font-bold text-white text-shadow max-lg:text-2xl"
-          >
+          <h1 className="text-left text-5xl font-bold text-white text-shadow max-lg:text-2xl">
             Viva a experiência de ter as vantagens da Click Speed
           </h1>
           <div className=" mt-2 flex flex-col max-lg:my-10">

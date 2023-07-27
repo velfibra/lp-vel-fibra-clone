@@ -14,10 +14,7 @@ export default function AwardContent() {
           />
         </div>
         <div className="flex flex-col max-lg:mt-5 xl:mt-20 xl:w-1/2">
-          <h1
-            id="help"
-            className="mx-auto text-center font-bold text-shadow max-lg:w-[95%] max-lg:text-xl xl:text-2xl 2xl:text-3xl"
-          >
+          <h1 className="mx-auto text-center font-bold text-shadow max-lg:w-[95%] max-lg:text-xl xl:text-2xl 2xl:text-3xl">
             A Click Speed é o provedor de internet mais premiado de Belém!
           </h1>
           <div className="mx-auto mt-2 flex flex-col">
