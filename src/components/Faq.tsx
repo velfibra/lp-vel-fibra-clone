@@ -3,7 +3,7 @@ import HelpSvg from './HelpSvg';
 
 export default function Faq() {
   return (
-    <section className="my-20 flex h-fit flex-col gap-7 p-6 text-white">
+    <section className="mb-20 mt-40 flex h-fit flex-col gap-7 p-6 text-white">
       <h1 id="help" className="text-center text-4xl font-bold text-shadow max-lg:text-2xl">
         Tire suas dúvidas da melhor internet de Belém!
       </h1>
