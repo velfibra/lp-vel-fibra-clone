@@ -16,7 +16,6 @@ export default function Hero() {
   return (
     <div className="flex items-center bg-hero-image bg-cover max-xl:mt-20 max-lg:h-fit max-lg:flex-col xl:h-[520px] 2xl:h-[700px]">
       <Image
-        loading="eager"
         className="rise h-fit animate-fadeInLeft xl:hidden"
         src={'/IMG-BANNER-01-Mobile.png'}
         alt="colaborador click Speed"
@@ -38,7 +37,6 @@ export default function Hero() {
         </button>
       </div>
       <Image
-        loading="eager"
         className="rise rise ml-10 h-fit animate-fadeIn max-lg:hidden xl:w-[40%]"
         src={'/IMG-BANNER-01-Mobile.png'}
         alt="colaborador click Speed"
