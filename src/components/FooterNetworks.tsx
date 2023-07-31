@@ -5,6 +5,10 @@ const networks = [
   { src: '/icons8-insta.svg', href: 'https://www.instagram.com/clickspeednet_/' },
   { src: '/icons8-facebook.svg', href: 'https://www.facebook.com/clickspeednet' },
   { src: '/icons8-twitter.svg', href: 'https://twitter.com/clickspeednet' },
+  {
+    src: '/icons8-linkedin.svg',
+    href: 'https://www.linkedin.com/company/clickspeed-net/mycompany/',
+  },
 ];
 
 export default function FooteriNetworks() {
