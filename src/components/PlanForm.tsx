@@ -10,6 +10,7 @@ type Props = {
   price: string;
   h1?: string;
   id: string;
+  wpp?: string;
 };
 
 interface FormInputs {
@@ -27,7 +28,7 @@ const schema = {
   phone: validate().min(10, 'Número de telefone inválido').max(12, 'Número de telefone inválido'),
 };
 
-export default function PlanForm({ id, price, h1 }: Props) {
+export default function PlanForm({ id, price, h1, wpp }: Props) {
   const { register, handleSubmit, errors, isSubmitting, setValue } = useForm<FormInputs>({
     resolver: resolver(schema),
   });
@@ -35,10 +36,12 @@ export default function PlanForm({ id, price, h1 }: Props) {
   const [message, setMessage] = useState(false);
   const [chosenPrice, setChosenPrice] = useState(price);
   const [isChecked, setIsChecked] = useState(false);
+  const [WhatsApp, setWhatsApp] = useState('');
 
-  const handleCheckboxChange = (price: string) => {
+  const handleCheckboxChange = (price: string, wpp?: string) => {
     setIsChecked(!isChecked);
     setChosenPrice(price);
+    setWhatsApp(wpp || '');
   };
 
   const onSubmit = async (data: FormInputs) => {
@@ -49,6 +52,7 @@ export default function PlanForm({ id, price, h1 }: Props) {
       name: data.name,
       email: data.email,
       phone: data.phone,
+      last_name: WhatsApp,
     };
 
     const personResponse = await postPerson(personData);
@@ -95,7 +99,7 @@ export default function PlanForm({ id, price, h1 }: Props) {
                   {errors[name] && <span className="text-xs text-red-700">⛔ {errors[name]}</span>}
                 </div>
               ))}
-              {!h1 && (
+              {!h1 && !wpp && (
                 <div className="flex w-full justify-evenly">
                   {prices.map(({ plan, price }) => (
                     <label htmlFor="" key={plan}>
@@ -105,6 +109,21 @@ export default function PlanForm({ id, price, h1 }: Props) {
                         type="radio"
                         name="option"
                         onChange={() => handleCheckboxChange(price)}
+                      />
+                    </label>
+                  ))}
+                </div>
+              )}
+              {wpp && (
+                <div className="flex w-full justify-evenly">
+                  {contact.map(({ method, price }) => (
+                    <label htmlFor="" key={method}>
+                      {method}
+                      <input
+                        className="w-6"
+                        type="radio"
+                        name="option"
+                        onChange={() => handleCheckboxChange(price, method)}
                       />
                     </label>
                   ))}
@@ -142,4 +161,9 @@ const prices = [
   { plan: `350MB`, price: '99,90' },
   { plan: `450MB`, price: '119,90' },
   { plan: `650MB`, price: '139,90' },
+];
+
+const contact = [
+  { method: `Me chame no WhatsApp`, price: '0' },
+  { method: `Me Ligue`, price: '0' },
 ];
