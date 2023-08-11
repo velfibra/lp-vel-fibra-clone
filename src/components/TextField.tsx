@@ -60,13 +60,13 @@ export default function TextField({
       <label
         htmlFor={rest.id || rest.name}
         className={clsx(
-          'pointer-events-none absolute left-0 transform select-none duration-200',
+          'pointer-events-none absolute origin-left transform select-none duration-200',
           shouldShowPlaceholder
             ? clsx(
                 'visible top-0 -translate-y-3.5 translate-x-3.5 scale-75',
-                error ? 'text-red-700' : 'text-primary',
+                error ? 'text-red-700' : 'text-black',
               )
-            : 'translate-x-4 translate-y-1/2 scale-100 text-gray-400',
+            : 'translate-x-4 translate-y-1/2 scale-100 text-gray-600',
         )}
       >
         {children}
@@ -83,12 +83,10 @@ export default function TextField({
           <legend
             className={clsx(
               'invisible select-none',
-              !shouldShowPlaceholder
-                ? 'max-w-0'
-                : 'max-w-full px-[10px] max-lg:-ml-[60px] lg:-ml-[118px]',
+              !shouldShowPlaceholder ? 'max-w-0' : 'max-w-full',
             )}
           >
-            <span className="mx-1 inline-block w-max text-xs">{children}</span>
+            <span className="ml-2 inline-block w-max text-xs">{children}</span>
           </legend>
         </fieldset>
       </div>

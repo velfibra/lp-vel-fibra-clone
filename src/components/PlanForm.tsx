@@ -76,23 +76,25 @@ export default function PlanForm({ id, price, h1, wpp }: Props) {
         <form
           id={id}
           onSubmit={handleSubmit(onSubmit)}
-          className="h-[600px] w-[450px] p-2 text-primary max-lg:h-[500px] max-lg:w-[300px]"
+          className="h-[500px] w-[430px] p-2 text-primary max-lg:h-[500px] max-lg:w-[300px]"
         >
           {!openMessage ? (
-            <div className="mx-auto mt-5 flex w-3/4 flex-col items-center gap-5 text-center text-lg font-bold max-lg:gap-3">
-              {h1 ? (
-                <h1 className="text-2xl max-lg:w-[300px] max-lg:text-lg">{`Legal! agora falta pouco para você garantir nossa oferta de ${h1}!`}</h1>
-              ) : (
-                <h1 className="text-2xl max-lg:w-[300px] max-lg:text-lg">
-                  Legal! Agora falta pouco para assinar sua internet!
-                </h1>
-              )}
+            <div className="flex flex-col gap-5">
+              <div className="text-center font-bold">
+                {h1 ? (
+                  <h1 className="text-2xl max-lg:w-[300px] max-lg:text-lg">{`Legal! agora falta pouco para você garantir nossa oferta de ${h1}!`}</h1>
+                ) : (
+                  <h1 className="text-2xl max-lg:w-[300px] max-lg:text-lg">
+                    Legal! Agora falta pouco para assinar sua internet!
+                  </h1>
+                )}
 
-              <h2 className="max-lg:w-[300px] max-lg:text-sm">
-                Preencha o formulário para falar com nossa equipe
-              </h2>
+                <h2 className="max-lg:w-[300px] max-lg:text-sm">
+                  Preencha o formulário para falar com nossa equipe
+                </h2>
+              </div>
               {inputs.map(({ name, placeHolder, ...props }) => (
-                <div key={name} className="flex w-full flex-col">
+                <div key={name} className="mx-auto flex w-[70%] flex-col">
                   <TextField {...register(name)} error={Boolean(errors[name])} {...props}>
                     {placeHolder}
                   </TextField>
