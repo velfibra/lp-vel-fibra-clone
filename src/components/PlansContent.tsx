@@ -23,7 +23,7 @@ export default function PlansContent() {
     setIsModalOpen(false);
   };
   return (
-    <section className="mx-auto p-6 font-sans text-shadow max-lg:w-full">
+    <section className="mx-auto p-6 font-sans max-lg:w-full">
       <div className="mb-10">
         <h1
           id="plan"
@@ -35,7 +35,7 @@ export default function PlansContent() {
           Escolha sua Internet banda larga e tenha wi-fi para toda a Família!
         </h2>
       </div>
-      <div className="mx-auto -mt-5 flex justify-between max-lg:w-full max-lg:flex-col max-lg:items-center xl:w-[90%] xl:animate-fadeInUp 2xl:w-[60%]">
+      <div className="mx-auto -mt-5 flex justify-between text-shadow max-lg:w-full max-lg:flex-col max-lg:items-center xl:w-[90%] xl:animate-fadeInUp 2xl:w-[60%]">
         {plans.map(({ h1, h2, id, price, mt, bg, bgButton, hover, icons, offer }) => (
           <div key={h1}>
             <Card
@@ -78,19 +78,13 @@ export default function PlansContent() {
                 contratar
               </button>
             </Card>
-            <Modal
-              price={priceItem}
-              h1={title}
-              id={idForm}
-              isOpen={isModalOpen}
-              onClose={closeModal}
-            />
           </div>
         ))}
       </div>
       <p className="mt-10 text-center font-semibold text-white">
         *Valor válido somente com pontualidade no pagamento.
       </p>
+      <Modal price={priceItem} h1={title} id={idForm} isOpen={isModalOpen} onClose={closeModal} />
     </section>
   );
 }
