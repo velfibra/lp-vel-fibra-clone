@@ -15,7 +15,7 @@ export default function Card({ children, className, flat = false, style, trimmed
       className={clsx(
         className,
         'w-full shadow-md shadow-black/80',
-        flat || 'rounded-lg',
+        flat || 'rounded-3xl',
         trimmed || 'p-5',
       )}
     >
