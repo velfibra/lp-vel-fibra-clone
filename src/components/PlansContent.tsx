@@ -35,11 +35,11 @@ export default function PlansContent() {
           Escolha sua Internet banda larga e tenha wi-fi para toda a Família!
         </h2>
       </div>
-      <div className="mx-auto -mt-5 flex justify-between max-lg:w-full max-lg:flex-col max-lg:items-center xl:w-[90%] xl:animate-fadeInUp 2xl:w-[57%]">
+      <div className="mx-auto -mt-5 flex justify-between max-lg:w-full max-lg:flex-col max-lg:items-center xl:w-[90%] xl:animate-fadeInUp 2xl:w-[62%]">
         {plans.map(({ h1, h2, id, price, mt, bg, bgButton, hover, icons, offer }) => (
           <div key={h1}>
             <Card
-              className={`my-5 flex ${mt} h-[450px] w-[330px] flex-col gap-5 p-2 ${bg} text-white hover:scale-110 hover:duration-300 max-lg:h-[450px] max-lg:animate-fadeInUp`}
+              className={`my-5 flex ${mt} h-[450px] w-[360px] flex-col gap-5 p-2 ${bg} text-white hover:scale-110 hover:duration-300 max-lg:h-[450px] max-lg:animate-fadeInUp`}
             >
               <div>
                 <div className="flex justify-center">
