@@ -69,7 +69,7 @@ const postPerson = async (data: personData) => {
   }
 };
 const postDeal = async (data: dealData) => {
-    const selectedSellerId = selectNextSeller();
+    const { selectedSellerId, nextSellerIndex } = selectNextSeller();
     data.user_id = selectedSellerId;
   
     try {
@@ -81,6 +81,9 @@ const postDeal = async (data: dealData) => {
           'Content-Type': 'application/json',
         },
       });
+  
+      // Atualizar o valor do índice do vendedor na variável de ambiente da Vercel
+      process.env.CURRENT_SELLER_INDEX = nextSellerIndex.toString();
     } catch (error) {
       console.error('Erro ao criar negócio:', error);
     }
