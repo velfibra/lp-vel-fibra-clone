@@ -18,16 +18,23 @@ type dealData = {
   '489d1f8ec764001bc871ac69de95ddd24256fe68'?: string;
 }; 
 
-const sellersIds = [13367036, 13323641, 13323586, 13458237, 13323630, 13359820, 13027576, 13323597, 13653399, 13443343];
+// const sellersIds = [13367036, 13323641, 13323586, 13458237, 13323630, 13359820, 13027576, 13323597, 13653399, 13443343];
+const sellersIds = [12641663];
 
 
-const currentSellerIndex = process.env.CURRENT_SELLER_INDEX ? parseInt(process.env.CURRENT_SELLER_INDEX) : 0;
+let currentSellerIndex = 0;
 
+// const selectNextSeller = () => {
+//   const selectedSellerId = sellersIds[currentSellerIndex];
+//   const nextSellerIndex = (currentSellerIndex + 1) % sellersIds.length;
+//   return { selectedSellerId, nextSellerIndex };
+// };
 const selectNextSeller = () => {
-  const selectedSellerId = sellersIds[currentSellerIndex];
-  const nextSellerIndex = (currentSellerIndex + 1) % sellersIds.length;
-  return { selectedSellerId, nextSellerIndex };
-};
+    const selectedSellerId = sellersIds[currentSellerIndex];
+    currentSellerIndex = (currentSellerIndex + 1) % sellersIds.length;
+    return selectedSellerId;
+  };
+  
 
 
 const fetchEmail = async (email: string) => {
@@ -68,8 +75,28 @@ const postPerson = async (data: personData) => {
     return false;
   }
 };
+// const postDeal = async (data: dealData) => {
+//     const { selectedSellerId, nextSellerIndex } = selectNextSeller();
+//     data.user_id = selectedSellerId;
+  
+//     try {
+//       await axios.post('https://api.pipedrive.com/v1/deals', data, {
+//         params: {
+//           api_token: '222f88de28024b4e36d1328030212ae6079389f4',
+//         },
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//       });
+  
+//       // Atualizar o valor do índice do vendedor na variável de ambiente da Vercel
+//       process.env.CURRENT_SELLER_INDEX = nextSellerIndex.toString();
+//     } catch (error) {
+//       console.error('Erro ao criar negócio:', error);
+//     }
+// };
 const postDeal = async (data: dealData) => {
-    const { selectedSellerId, nextSellerIndex } = selectNextSeller();
+    const selectedSellerId = selectNextSeller();
     data.user_id = selectedSellerId;
   
     try {
@@ -82,8 +109,7 @@ const postDeal = async (data: dealData) => {
         },
       });
   
-      // Atualizar o valor do índice do vendedor na variável de ambiente da Vercel
-      process.env.CURRENT_SELLER_INDEX = nextSellerIndex.toString();
+      console.log('Lead atribuído ao vendedor:', selectedSellerId);
     } catch (error) {
       console.error('Erro ao criar negócio:', error);
     }
