@@ -19,12 +19,14 @@ type dealData = {
 }; 
 
 const sellersIds = [13367036, 13323641, 13323586, 13458237, 13323630, 13359820, 13027576, 13323597, 13653399, 13443343];
-let currentSellerIndex = 0;
+
+
+const currentSellerIndex = process.env.CURRENT_SELLER_INDEX ? parseInt(process.env.CURRENT_SELLER_INDEX) : 0;
 
 const selectNextSeller = () => {
   const selectedSellerId = sellersIds[currentSellerIndex];
-  currentSellerIndex = (currentSellerIndex + 1) % sellersIds.length;
-  return selectedSellerId;
+  const nextSellerIndex = (currentSellerIndex + 1) % sellersIds.length;
+  return { selectedSellerId, nextSellerIndex };
 };
 
 
