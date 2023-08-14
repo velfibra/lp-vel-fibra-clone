@@ -79,8 +79,6 @@ const postDeal = async (data: dealData) => {
           'Content-Type': 'application/json',
         },
       });
-  
-      console.log('Lead atribuído ao vendedor:', selectedSellerId);
     } catch (error) {
       console.error('Erro ao criar negócio:', error);
     }
