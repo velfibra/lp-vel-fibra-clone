@@ -1,5 +1,4 @@
 'use client';
-import clsx from 'clsx';
 import { useForm, validate, resolver } from '@/hooks/useForm';
 import { useState } from 'react';
 import { fetchEmail, postDeal, postPerson } from '@/utils/server';
@@ -64,6 +63,7 @@ export default function PlanForm({ id, price, h1, wpp }: Props) {
       person_id: personId,
       pipeline_id: 2,
       visible_to: 3,
+      '489d1f8ec764001bc871ac69de95ddd24256fe68': 'ADS',
     };
 
     await postDeal(dealData);
