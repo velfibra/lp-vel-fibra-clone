@@ -1,5 +1,19 @@
 import axios from 'axios';
-import { getIndex } from '@/app/api/get-seller_index/route';
+import { createPool } from "@vercel/postgres";;
+
+const client = createPool({
+    connectionString: "postgres://default:hdl5rvQJ3Woe@ep-shrill-feather-56119370-pooler.us-east-1.postgres.vercel-storage.com/verceldb"
+})
+
+export async function getIndex() {
+  const sellerIndex = await client.sql`SELECT * FROM seller_index;`;
+  const response = sellerIndex.rows
+  const index = response[0].index
+  console.log(index);
+  
+  return index
+}
+
 
 type personData = {
   name: string;

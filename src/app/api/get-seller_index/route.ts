@@ -5,14 +5,14 @@ const client = createPool({
     connectionString: "postgres://default:hdl5rvQJ3Woe@ep-shrill-feather-56119370-pooler.us-east-1.postgres.vercel-storage.com/verceldb"
 })
 
-export async function getIndex() {
-  const sellerIndex = await client.sql`SELECT * FROM seller_index;`;
-  const response = sellerIndex.rows
-  const index = response[0].index
-  console.log(index);
+// export async function getIndex() {
+//   const sellerIndex = await client.sql`SELECT * FROM seller_index;`;
+//   const response = sellerIndex.rows
+//   const index = response[0].index
+//   console.log(index);
   
-  return index
-}
+//   return index
+// }
 
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
