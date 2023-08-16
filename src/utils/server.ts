@@ -42,10 +42,7 @@ const getSellerIndex = async () => {
 
 const selectNextSeller = async () => {
   const sellerIndex = await getSellerIndex()
-  console.log('teste aqui', sellerIndex)
   let currentSellerIndex = sellerIndex
-  console.log('eu aqui',currentSellerIndex);
-  
   const selectedSellerId = sellersIds[currentSellerIndex];
   currentSellerIndex   = (currentSellerIndex + 1) % sellersIds.length;
   return selectedSellerId;
