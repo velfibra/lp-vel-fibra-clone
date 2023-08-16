@@ -9,8 +9,6 @@ export async function getIndex() {
   const sellerIndex = await client.sql`SELECT * FROM seller_index;`;
   const response = sellerIndex.rows
   const index = response[0].index
-  console.log(index);
-  
   return index
 }
 
@@ -106,7 +104,6 @@ const postDeal = async (data: dealData) => {
         },
       });
   
-      console.log('Lead atribuído ao vendedor:', selectedSellerId);
       await incrementSellerIndex();
     } catch (error) {
       console.error('Erro ao criar negócio:', error);
@@ -119,8 +116,6 @@ const incrementSellerIndex = async () => {
         const newIndex = (sellerIndex + 1) % sellersIds.length;
         const updateUrl = `https://lp.clickspeed.net.br//api/get-seller_index?newIndex=${newIndex}`;
         await axios.get(updateUrl);
-
-        console.log('Índice do vendedor atualizado para:', newIndex);
     } catch (error) {
         console.error('Erro ao atualizar o índice do vendedor:', error);
     }
