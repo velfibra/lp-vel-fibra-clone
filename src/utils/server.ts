@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getIndex } from '@/app/api/get-seller_index/route';
 
 type personData = {
   name: string;
@@ -18,23 +19,25 @@ type dealData = {
   '489d1f8ec764001bc871ac69de95ddd24256fe68'?: string;
 }; 
 
-// const sellersIds = [13367036, 13323641, 13323586, 13458237, 13323630, 13359820, 13027576, 13323597, 13653399, 13443343];
-const sellersIds = [12641663];
+const sellersIds = [13367036, 13323641, 13323586, 13458237, 13323630, 13359820, 13027576, 13323597, 13653399, 13443343];
+
+const getSellerIndex = async () => {
+    const index = await getIndex();
+    const sellerIndex = index;
+    return sellerIndex;
+}
 
 
-let currentSellerIndex = 0;
-
-// const selectNextSeller = () => {
-//   const selectedSellerId = sellersIds[currentSellerIndex];
-//   const nextSellerIndex = (currentSellerIndex + 1) % sellersIds.length;
-//   return { selectedSellerId, nextSellerIndex };
-// };
-const selectNextSeller = () => {
-    const selectedSellerId = sellersIds[currentSellerIndex];
-    currentSellerIndex = (currentSellerIndex + 1) % sellersIds.length;
-    return selectedSellerId;
-  };
+const selectNextSeller = async () => {
+  const sellerIndex = await getSellerIndex()
+  console.log('teste aqui', sellerIndex)
+  let currentSellerIndex = sellerIndex
+  console.log('eu aqui',currentSellerIndex);
   
+  const selectedSellerId = sellersIds[currentSellerIndex];
+  currentSellerIndex   = (currentSellerIndex + 1) % sellersIds.length;
+  return selectedSellerId;
+};
 
 
 const fetchEmail = async (email: string) => {
@@ -75,28 +78,8 @@ const postPerson = async (data: personData) => {
     return false;
   }
 };
-// const postDeal = async (data: dealData) => {
-//     const { selectedSellerId, nextSellerIndex } = selectNextSeller();
-//     data.user_id = selectedSellerId;
-  
-//     try {
-//       await axios.post('https://api.pipedrive.com/v1/deals', data, {
-//         params: {
-//           api_token: '222f88de28024b4e36d1328030212ae6079389f4',
-//         },
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//       });
-  
-//       // Atualizar o valor do índice do vendedor na variável de ambiente da Vercel
-//       process.env.CURRENT_SELLER_INDEX = nextSellerIndex.toString();
-//     } catch (error) {
-//       console.error('Erro ao criar negócio:', error);
-//     }
-// };
 const postDeal = async (data: dealData) => {
-    const selectedSellerId = selectNextSeller();
+    const selectedSellerId = await selectNextSeller();
     data.user_id = selectedSellerId;
   
     try {
@@ -110,9 +93,22 @@ const postDeal = async (data: dealData) => {
       });
   
       console.log('Lead atribuído ao vendedor:', selectedSellerId);
+      await incrementSellerIndex();
     } catch (error) {
       console.error('Erro ao criar negócio:', error);
     }
 };
 
+const incrementSellerIndex = async () => {
+    try {
+        const sellerIndex = await getIndex();
+        const newIndex = (sellerIndex + 1) % sellersIds.length;
+        const updateUrl = `http://lp.clickspeed.net.br//api/get-seller_index?newIndex=${newIndex}`;
+        await axios.get(updateUrl);
+
+        console.log('Índice do vendedor atualizado para:', newIndex);
+    } catch (error) {
+        console.error('Erro ao atualizar o índice do vendedor:', error);
+    }
+};
 export { fetchEmail, postPerson, postDeal };
