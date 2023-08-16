@@ -39,7 +39,7 @@ export default function PlansContent() {
         {plans.map(({ h1, h2, id, price, mt, bg, bgButton, hover, icons, offer }) => (
           <div key={h1}>
             <Card
-              className={`my-5 flex ${mt} flex-col gap-5 p-2 ${bg} text-white hover:scale-110 hover:duration-300 max-lg:h-[450px] max-lg:animate-fadeInUp`}
+              className={`my-5 flex ${mt} flex-col gap-10 p-2 ${bg} text-white hover:scale-110 hover:duration-300 max-lg:h-[450px] max-lg:animate-fadeInUp`}
             >
               <div>
                 <div className="flex justify-center">
@@ -55,7 +55,7 @@ export default function PlansContent() {
                 </div>
               </div>
               <CardContent>
-                <h3 className="text-center">Instalação grátis em 24 horas**</h3>
+                {/* <h3 className="text-center">Instalação grátis em 24 horas**</h3> */}
                 <h3 className="text-center">Wi-fi Grátis</h3>
                 <div className="my-5 flex justify-center gap-2">
                   {icons?.map(({ src, alt }) => (
