@@ -24,7 +24,7 @@ export default function Hero() {
       />
       <div className="-mt-10 h-fit  w-full text-shadow max-lg:mt-5 max-lg:text-lg xl:text-6xl 2xl:ml-20 2xl:text-8xl">
         <h1 className="rise ml-10 w-[90%] animate-fadeInLeft font-bold text-white max-lg:mx-auto max-lg:text-center max-lg:text-3xl">
-          Chega de reiniciar o modem toda hora!
+          Sua Conexão Sem Interrupções!
         </h1>
         <h2 className="rise ml-10 mt-10 animate-fadeInLeft text-white  text-shadow animation-delay-300 max-lg:mx-auto max-lg:mt-2 max-lg:w-[70%] max-lg:text-center max-lg:text-xl xl:text-2xl 2xl:text-4xl">
           Tenha a melhor internet Fibra Óptica de Belém
