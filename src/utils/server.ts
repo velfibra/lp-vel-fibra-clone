@@ -117,7 +117,7 @@ const incrementSellerIndex = async () => {
     try {
         const sellerIndex = await getIndex();
         const newIndex = (sellerIndex + 1) % sellersIds.length;
-        const updateUrl = `http://lp.clickspeed.net.br//api/get-seller_index?newIndex=${newIndex}`;
+        const updateUrl = `https://lp.clickspeed.net.br//api/get-seller_index?newIndex=${newIndex}`;
         await axios.get(updateUrl);
 
         console.log('Índice do vendedor atualizado para:', newIndex);
