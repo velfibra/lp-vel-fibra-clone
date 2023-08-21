@@ -7,7 +7,7 @@ export default function AwardContent() {
         <div className="w-1/2 max-lg:hidden">
           <Image
             className="rise animate-fadeIn animation-delay-300"
-            src={'/IMG-COBERTURA.png'}
+            src={'/IMG-PREMIOS.png'}
             width={961}
             height={932}
             alt="influencer apontando para premios"

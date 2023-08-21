@@ -24,7 +24,7 @@ export default function SVAComponent() {
         </div>
         <div className="rise animate-fadeIn animation-delay-300 xl:w-1/2">
           <Image
-            src={'/IMG-BENEFICIOS (1).png'}
+            src={'/IMG-BENEFICIOS.png'}
             width={961}
             height={932}
             alt="influencer apontando para premios"
