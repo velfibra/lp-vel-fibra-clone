@@ -38,7 +38,7 @@ export default function Hero() {
       </div>
       <Image
         className="rise rise ml-10 h-fit animate-fadeIn max-lg:hidden xl:w-[40%]"
-        src={'/IMG-BANNER-01-Mobile.png'}
+        src={'/IMG-BANNER-01-VEL-FIBRA.png'}
         alt="colaborador click Speed"
         width={800}
         height={735}
