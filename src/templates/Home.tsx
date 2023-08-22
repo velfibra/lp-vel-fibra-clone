@@ -23,7 +23,7 @@ export default function Home() {
       </main>
       <Footer />
       <div className="mt-5 bg-primary p-1 text-center  text-gray-200">
-        <p>ClickSpeed - Copyright © 2023 todos os direitos reservados.</p>
+        <p>VelFibra - Copyright © 2023 todos os direitos reservados.</p>
       </div>
     </div>
   );
