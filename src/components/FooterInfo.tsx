@@ -11,7 +11,7 @@ export default function FooterInfo() {
           width={200}
           height={167}
         />
-        <p className=" w-60 font-semibold max-lg:ml-10 max-lg:text-center max-md:w-full xl:ml-3">
+        <p className="-ml-10 w-60 text-center font-semibold max-lg:ml-10 max-md:w-full">
           A internet que coloca você em primeiro lugar.
         </p>
       </div>
