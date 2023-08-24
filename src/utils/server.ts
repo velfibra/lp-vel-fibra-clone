@@ -110,6 +110,8 @@ const postDeal = async (data: dealData) => {
 const incrementSellerIndex = async () => {
     try {
         const sellerIndex = await getIndex();
+        console.log('entrei aqqui');
+        
         const newIndex = (sellerIndex + 1) % sellersIds.length;
         const updateUrl = `https://www.velfibra.com.br///api/get-seller_index?newIndex=${newIndex}`;
         await axios.get(updateUrl);
