@@ -111,7 +111,7 @@ const incrementSellerIndex = async () => {
     try {
         const sellerIndex = await getIndex();
         const newIndex = (sellerIndex + 1) % sellersIds.length;
-        const updateUrl = `https://lp.clickspeed.net.br//api/get-seller_index?newIndex=${newIndex}`;
+        const updateUrl = `https://www.velfibra.com.br///api/get-seller_index?newIndex=${newIndex}`;
         await axios.get(updateUrl);
     } catch (error) {
         console.error('Erro ao atualizar o índice do vendedor:', error);
