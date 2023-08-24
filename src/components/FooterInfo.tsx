@@ -12,7 +12,7 @@ export default function FooterInfo() {
           height={167}
         />
         <p className=" w-60 font-semibold max-lg:ml-10 max-lg:text-center max-md:w-full xl:ml-3">
-          A internet que se garante.
+          A internet que coloca você em primeiro lugar.
         </p>
       </div>
     </>

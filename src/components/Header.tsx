@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Logo from './Logo';
 import LogoMobile from './LogoMobile';
 import MobileMenu from './MobileMenu';
@@ -17,9 +18,12 @@ export default function Header() {
             ))}
           </ul>
         </nav>
-        <span className="flex text-xl 2xl:-mr-10  2xl:ml-10">
-          Assine pelo telefone: <p className="ml-1 font-bold">(91)3085-3190</p>
-        </span>
+        <Link
+          href={'https://sgp.clickspeed.net.br/accounts/central/login'}
+          className="font rounded-lg border-[1px] border-black bg-secondary p-2 font-semibold text-white duration-700 hover:scale-110 hover:bg-primary max-lg:hidden xl:mr-5 xl:w-56 2xl:mr-16 2xl:w-fit"
+        >
+          ÁREA DO CLIENTE
+        </Link>
       </div>
       <MobileMenu />
     </header>

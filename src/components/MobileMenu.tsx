@@ -45,4 +45,5 @@ const links = [
   { name: 'Cobertura', link: '#coverage' },
   { name: 'Duvidas', link: '#help' },
   { name: 'Contatos', link: '#contact' },
+  { name: 'Área do cliente', link: 'https://sgp.clickspeed.net.br/accounts/central/login' },
 ];
