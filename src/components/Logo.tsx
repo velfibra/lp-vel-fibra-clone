@@ -33,7 +33,7 @@ export default function Logo({ text = false, size = 'small', className }: LogoPr
         viewBox="0 0 271 60"
         fill="none"
       >
-        <g clip-path="url(#clip0_257_2)">
+        <g clipPath="url(#clip0_257_2)">
           <path
             d="M73.6091 10.9014H81.263L84.5374 40.2564L99.7415 10.9014H107.395L85.6452 49.7126H79.5221L73.6091 10.9014Z"
             fill="white"

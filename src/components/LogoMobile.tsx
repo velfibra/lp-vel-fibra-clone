@@ -34,7 +34,7 @@ export default function LogoMobile({ text = false, size = 'small', className }: 
         viewBox="0 0 144 30"
         fill="none"
       >
-        <g clip-path="url(#clip0_257_16)">
+        <g clipPath="url(#clip0_257_16)">
           <path
             d="M39.1133 5.45044H43.1803L44.9202 20.1279L52.9991 5.45044H57.0661L45.5088 24.8561H42.2552L39.1133 5.45044Z"
             fill="white"
