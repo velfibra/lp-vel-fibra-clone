@@ -5,7 +5,7 @@ export default function Faq() {
   return (
     <section className="mb-20 mt-40 flex h-fit flex-col gap-7 p-6 text-white">
       <h1 id="help" className="text-center text-4xl font-bold text-shadow max-lg:text-2xl">
-        Duvidas Frequentees
+        Duvidas Frequentes
       </h1>
       <h2 className="-mt-4 text-center text-xl max-lg:text-center max-lg:text-base">
         A Vel Fibra responde as principais perguntas sobre nossos serviços e cobertura.
