@@ -17,8 +17,8 @@ export default function Hero() {
     <div className="flex items-center bg-hero-image bg-cover max-xl:mt-20 max-lg:h-fit max-lg:flex-col xl:h-[520px] 2xl:h-[700px]">
       <Image
         className="rise h-fit animate-fadeInLeft xl:hidden"
-        src={'/IMG-BANNER-01-Mobile.png'}
-        alt="colaborador click Speed"
+        src={'/IMG-BANNER-01-VEL-FIBRA.png'}
+        alt="colaborador Vel Fibra"
         width={800}
         height={735}
       />
@@ -39,7 +39,7 @@ export default function Hero() {
       <Image
         className="rise rise ml-10 h-fit animate-fadeIn max-lg:hidden xl:w-[40%]"
         src={'/IMG-BANNER-01-VEL-FIBRA.png'}
-        alt="colaborador click Speed"
+        alt="colaborador Vel Fibra"
         width={800}
         height={735}
       />
