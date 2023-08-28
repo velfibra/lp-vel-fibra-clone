@@ -39,7 +39,7 @@ export default function PlansContent() {
         {plans.map(({ h1, h2, id, price, mt, bg, bgButton, hover, icons, offer }) => (
           <div key={h1}>
             <Card
-              className={`my-5 flex ${mt} flex-col gap-10 p-2 ${bg} text-white hover:scale-110 hover:duration-300 max-lg:h-[480px] max-lg:animate-fadeInUp`}
+              className={`my-5 flex ${mt} h-[500px] flex-col gap-10 p-2 ${bg} text-white hover:scale-110 hover:duration-300 max-lg:h-[480px] max-lg:animate-fadeInUp`}
             >
               <div>
                 <div className="flex justify-center">
@@ -59,14 +59,7 @@ export default function PlansContent() {
                 <h3 className="text-center">Wi-fi Grátis</h3>
                 <div className="my-5 flex justify-center gap-2">
                   {icons?.map(({ src, alt }) => (
-                    <Image
-                      className="rounded-full shadow-md shadow-gray-600 hover:scale-110"
-                      key={src}
-                      src={src}
-                      alt={alt}
-                      width={40}
-                      height={40}
-                    />
+                    <Image className="" key={src} src={src} alt={alt} width={160} height={60} />
                   ))}
                 </div>
                 <h3 className=" text-center max-lg:my-2">**Consulte viabilidade</h3>
@@ -99,10 +92,7 @@ const plans = [
     bg: 'bg-gradient-to-r from-secondary via-secondary to-red-400',
     bgButton: 'from-primary to-primary/80',
     hover: 'hover:bg-gradient-to-b hover:from-[#1A0530] hover:to-[#1A0530]/60',
-    icons: [
-      { src: '/4.png', alt: 'Click Beneficios' },
-      { src: '/3.png', alt: 'Lev Educa' },
-    ],
+    icons: [{ src: '/WIFI-BASICS.png', alt: 'WIFI-BASICS' }],
   },
   {
     h1: '450',
@@ -115,12 +105,7 @@ const plans = [
     bg: 'bg-gradient-to-r from-primary  to-fuchsia-800',
     bgButton: 'from-secondary to-secondary/60',
     hover: 'hover:bg-gradient-to-b hover:from-[#1A0530] hover:to-[#1A0530]/60',
-    icons: [
-      { src: '/4.png', alt: 'Click Beneficios' },
-      { src: '/3.png', alt: 'Lev Educa' },
-      { src: '/5.png', alt: 'Deezer' },
-      { src: '/2.png', alt: 'Plataforma Qualifica' },
-    ],
+    icons: [{ src: '/WIFI-PLUS.png', alt: 'WIFI-PLUS' }],
   },
   {
     h1: '650',
@@ -131,12 +116,6 @@ const plans = [
     bg: 'bg-gradient-to-r from-secondary via-secondary to-red-400',
     bgButton: 'from-primary to-primary/80',
     hover: 'hover:bg-gradient-to-b hover:from-[#1A0530] hover:to-[#1A0530]/60',
-    icons: [
-      { src: '/4.png', alt: 'Click Beneficios' },
-      { src: '/3.png', alt: 'Lev Educa' },
-      { src: '/5.png', alt: 'Deezer' },
-      { src: '/2.png', alt: 'Plataforma Qualifica' },
-      { src: '/1.png', alt: 'Streming Watch' },
-    ],
+    icons: [{ src: '/WIFI-PREMIUM.png', alt: 'WIFI-PREMIUM' }],
   },
 ];
