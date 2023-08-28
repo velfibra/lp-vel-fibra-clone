@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createPool } from "@vercel/postgres";;
 
 const client = createPool({
-    connectionString: "postgres://default:VREqhQ39cPHi@ep-icy-lab-47725338-pooler.us-east-1.postgres.vercel-storage.com/verceldb"
+    connectionString: "postgres://default:btuMkcF6x0pr@ep-empty-sunset-82745011-pooler.us-east-1.postgres.vercel-storage.com/verceldb"
 })
 
 export async function getIndex() {
