@@ -42,8 +42,4 @@ export default function SVAComponent() {
   );
 }
 
-const infos = [
-  { info: 'INSTALAÇÃO GRÁTIS' },
-  { info: 'INTERNET ILIMITADA' },
-  { info: 'SUPORTE ESPECIALIZADO' },
-];
+const infos = [{ info: 'INSTALAÇÃO GRÁTIS' }, { info: 'INTERNET ILIMITADA' }];
