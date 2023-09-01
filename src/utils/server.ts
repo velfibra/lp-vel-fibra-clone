@@ -31,7 +31,7 @@ type dealData = {
   '489d1f8ec764001bc871ac69de95ddd24256fe68'?: string;
 }; 
 
-const sellersIds = [13367036, 13323641, 13323586, 13458237, 13323630, 13359820, 13027576, 13323597, 13653399, 13443343];
+const sellersIds = [13367036, 13323641, 13323586, 13458237, 13323630, 13359820, 13027576, 13323597, 13653399];
 
 const getSellerIndex = async () => {
     const index = await getIndex();
