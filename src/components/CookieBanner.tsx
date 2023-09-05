@@ -5,11 +5,17 @@ import { getLocalStorage, setLocalStorage } from '@/app/lib/StorageHelper';
 import TagManager, { TagManagerArgs } from 'react-gtm-module';
 
 export default function CookieBanner() {
-  const [cookieConsent, setCookieConsent] = useState(false); // Alterado de null para false
+  const [cookieConsent, setCookieConsent] = useState(false);
+  const [pageLoaded, setPageLoaded] = useState(false);
 
   useEffect(() => {
     const storedCookieConsent = getLocalStorage('cookie_consent', false);
     setCookieConsent(storedCookieConsent);
+
+    // Defina a página como carregada após um pequeno atraso para garantir que outros componentes sejam montados
+    setTimeout(() => {
+      setPageLoaded(true);
+    }, 100);
   }, []);
 
   useEffect(() => {
@@ -19,7 +25,7 @@ export default function CookieBanner() {
       });
     }
 
-    if (cookieConsent !== null) {
+    if (cookieConsent !== null && pageLoaded) {
       const newValue = cookieConsent ? 'granted' : 'denied';
 
       if (typeof document !== 'undefined') {
@@ -38,10 +44,10 @@ export default function CookieBanner() {
 
       setLocalStorage('cookie_consent', cookieConsent);
     }
-  }, [cookieConsent]);
+  }, [cookieConsent, pageLoaded]);
 
-  if (cookieConsent === null) {
-    // Aguarde a verificação do consentimento
+  if (!pageLoaded) {
+    // Aguarde a página ser carregada antes de renderizar o banner
     return null;
   }
 
@@ -52,7 +58,7 @@ export default function CookieBanner() {
 
   // Consentimento não concedido, exiba o banner
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-10 mx-auto my-10 max-w-max animate-fadeInUp flex-col items-center justify-between gap-4 rounded-lg bg-gray-300 px-3 py-3 shadow animation-delay-500 sm:flex-row md:max-w-screen-sm md:px-4">
+    <div className="fixed bottom-0 left-0 right-0 z-10 mx-auto my-10 max-w-max  flex-col items-center justify-between gap-4 rounded-lg bg-white px-3 py-3 shadow sm:flex-row md:max-w-screen-sm md:px-4">
       <div className="text-center">
         <Link href="/info/cookies">
           <p className="text-gray-800">
@@ -66,7 +72,7 @@ export default function CookieBanner() {
           className="mx-auto rounded-lg bg-primary px-5 py-2 text-white"
           onClick={() => setCookieConsent(true)}
         >
-          Aceitar
+          Fechar
         </button>
       </div>
     </div>
