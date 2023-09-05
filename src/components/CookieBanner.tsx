@@ -5,7 +5,7 @@ import { getLocalStorage, setLocalStorage } from '@/app/lib/StorageHelper';
 import TagManager, { TagManagerArgs } from 'react-gtm-module';
 
 export default function CookieBanner() {
-  const [cookieConsent, setCookieConsent] = useState(false);
+  const [cookieConsent, setCookieConsent] = useState(false); // Alterado de null para false
 
   useEffect(() => {
     const storedCookieConsent = getLocalStorage('cookie_consent', false);
@@ -19,37 +19,39 @@ export default function CookieBanner() {
       });
     }
 
-    const newValue = cookieConsent ? 'granted' : 'denied';
+    if (cookieConsent !== null) {
+      const newValue = cookieConsent ? 'granted' : 'denied';
 
-    if (typeof document !== 'undefined') {
-      const eventArgs: TagManagerArgs = {
-        dataLayer: {
-          event: 'CookieConsentUpdate',
-          category: 'Cookie Consent',
-          action: 'Update',
-          label: newValue,
-        },
-        dataLayerName: 'dataLayer',
-        gtmId: '',
-      };
-      TagManager.dataLayer(eventArgs);
+      if (typeof document !== 'undefined') {
+        const eventArgs: TagManagerArgs = {
+          dataLayer: {
+            event: 'CookieConsentUpdate',
+            category: 'Cookie Consent',
+            action: 'Update',
+            label: newValue,
+          },
+          dataLayerName: 'dataLayer',
+          gtmId: '',
+        };
+        TagManager.dataLayer(eventArgs);
+      }
+
+      setLocalStorage('cookie_consent', cookieConsent);
     }
-
-    setLocalStorage('cookie_consent', cookieConsent);
   }, [cookieConsent]);
 
-  if (cookieConsent) {
+  if (cookieConsent === null) {
+    // Aguarde a verificação do consentimento
     return null;
   }
 
-  if (typeof document !== 'undefined') {
-    if (cookieConsent) {
-      return null;
-    }
+  if (cookieConsent) {
+    // Consentimento concedido, não renderize o banner
+    return null;
   }
 
+  // Consentimento não concedido, exiba o banner
   return (
-    // Se o consentimento ainda não foi dado, exiba o banner
     <div className="fixed bottom-0 left-0 right-0 z-10 mx-auto my-10 max-w-max animate-fadeInUp flex-col items-center justify-between gap-4 rounded-lg bg-gray-300 px-3 py-3 shadow animation-delay-500 sm:flex-row md:max-w-screen-sm md:px-4">
       <div className="text-center">
         <Link href="/info/cookies">
