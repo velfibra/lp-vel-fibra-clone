@@ -15,13 +15,12 @@ export default function CookieBanner() {
   useEffect(() => {
     if (typeof document !== 'undefined') {
       TagManager.initialize({
-        gtmId: 'GTM-WHX92B2', // Substitua pelo seu ID do Google Tag Manager
+        gtmId: 'GTM-WHX92B2',
       });
     }
 
     const newValue = cookieConsent ? 'granted' : 'denied';
 
-    // Enviar evento para o Google Tag Manager
     if (typeof document !== 'undefined') {
       const eventArgs: TagManagerArgs = {
         dataLayer: {
@@ -40,7 +39,13 @@ export default function CookieBanner() {
   }, [cookieConsent]);
 
   if (cookieConsent) {
-    return null; // Se o consentimento já foi dado, não exiba o banner
+    return null;
+  }
+
+  if (typeof document !== 'undefined') {
+    if (cookieConsent) {
+      return null;
+    }
   }
 
   return (
