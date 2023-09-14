@@ -44,8 +44,6 @@ export default function PlanForm({ id, price, h1, wpp, address }: Props) {
     setChosenPrice(price);
   };
 
-  console.log(address);
-
   const onSubmit = async (data: FormInputs) => {
     setIsLoading(true);
     const emailExist = await fetchEmail(data.email);
@@ -77,8 +75,6 @@ export default function PlanForm({ id, price, h1, wpp, address }: Props) {
     } finally {
       setIsLoading(false);
     }
-
-    console.log(address);
   };
 
   return (
