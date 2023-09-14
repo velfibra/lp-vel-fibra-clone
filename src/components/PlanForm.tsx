@@ -4,12 +4,14 @@ import { useState } from 'react';
 import { fetchEmail, postDeal, postPerson } from '@/utils/server';
 import SuceffullyMessage from './SucessfullyMessage';
 import TextField from './TextField';
+import Loading from './Loading';
 
 type Props = {
   price: string;
   h1?: string;
   id: string;
   wpp?: string;
+  address?: string;
 };
 
 interface FormInputs {
@@ -27,7 +29,7 @@ const schema = {
   phone: validate().min(10, 'Número de telefone inválido').max(12, 'Número de telefone inválido'),
 };
 
-export default function PlanForm({ id, price, h1, wpp }: Props) {
+export default function PlanForm({ id, price, h1, wpp, address }: Props) {
   const { register, handleSubmit, errors, isSubmitting, setValue } = useForm<FormInputs>({
     resolver: resolver(schema),
   });
@@ -35,39 +37,48 @@ export default function PlanForm({ id, price, h1, wpp }: Props) {
   const [message, setMessage] = useState(false);
   const [chosenPrice, setChosenPrice] = useState(price);
   const [isChecked, setIsChecked] = useState(false);
-  const [WhatsApp, setWhatsApp] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleCheckboxChange = (price: string, wpp?: string) => {
+  const handleCheckboxChange = (price: string) => {
     setIsChecked(!isChecked);
     setChosenPrice(price);
-    setWhatsApp(wpp || '');
   };
 
+  console.log(address);
+
   const onSubmit = async (data: FormInputs) => {
+    setIsLoading(true);
     const emailExist = await fetchEmail(data.email);
     if (emailExist) return setMessage(true);
+    try {
+      const personData = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+      };
 
-    const personData = {
-      name: data.name,
-      email: data.email,
-      phone: data.phone,
-      last_name: WhatsApp,
-    };
+      const personResponse = await postPerson(personData);
+      const personId = personResponse;
 
-    const personResponse = await postPerson(personData);
-    const personId = personResponse;
+      const dealData = {
+        title: data.name,
+        value: chosenPrice,
+        person_id: personId,
+        pipeline_id: 2,
+        visible_to: 3,
+        '2dc9ddcb4b9b30336f9bc7ebace4b672a702baf2': address,
+        '489d1f8ec764001bc871ac69de95ddd24256fe68': 'ADS',
+      };
 
-    const dealData = {
-      title: data.name,
-      value: chosenPrice,
-      person_id: personId,
-      pipeline_id: 2,
-      visible_to: 3,
-      '489d1f8ec764001bc871ac69de95ddd24256fe68': 'ADS',
-    };
+      await postDeal(dealData);
+      setOpenMessage(true);
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
+    } finally {
+      setIsLoading(false);
+    }
 
-    await postDeal(dealData);
-    setOpenMessage(true);
+    console.log(address);
   };
 
   return (
@@ -76,7 +87,7 @@ export default function PlanForm({ id, price, h1, wpp }: Props) {
         <form
           id={id}
           onSubmit={handleSubmit(onSubmit)}
-          className="h-[500px] w-[430px] p-2 text-primary max-lg:h-[500px] max-lg:w-[300px]"
+          className="h-[500px] w-[430px] p-2 text-primary max-lg:h-[400px] max-lg:w-[300px]"
         >
           {!openMessage ? (
             <div className="flex flex-col gap-5">
@@ -85,12 +96,12 @@ export default function PlanForm({ id, price, h1, wpp }: Props) {
                   <h1 className="text-2xl max-lg:w-[300px] max-lg:text-lg">{`Legal! agora falta pouco para você garantir nossa oferta de ${h1}!`}</h1>
                 ) : (
                   <h1 className="text-2xl max-lg:w-[300px] max-lg:text-lg">
-                    Legal! Agora falta pouco para assinar sua internet!
+                    Legal! Agora falta pouco para adquirir a melhor internet!
                   </h1>
                 )}
 
                 <h2 className="max-lg:w-[300px] max-lg:text-sm">
-                  Preencha o formulário para falar com nossa equipe
+                  Preencha o formulário para falar com nossa equipe.
                 </h2>
               </div>
               {inputs.map(({ name, placeHolder, ...props }) => (
@@ -116,27 +127,12 @@ export default function PlanForm({ id, price, h1, wpp }: Props) {
                   ))}
                 </div>
               )}
-              {wpp && (
-                <div className="flex w-full justify-evenly">
-                  {contact.map(({ method, price }) => (
-                    <label htmlFor="" key={method}>
-                      {method}
-                      <input
-                        className="w-6"
-                        type="radio"
-                        name="option"
-                        onChange={() => handleCheckboxChange(price, method)}
-                      />
-                    </label>
-                  ))}
-                </div>
-              )}
               <button
                 disabled={isSubmitting}
-                className="mt-7 h-11 w-fit self-center rounded-lg bg-gradient-to-b from-secondary to-secondary/60 px-2 font-bold uppercase text-white shadow-md shadow-gray-500 duration-500 hover:scale-105 max-lg:w-[90%] max-lg:text-sm"
+                className="mt-7 h-11 w-[250px] self-center rounded-lg bg-gradient-to-b from-secondary to-secondary/60 px-2 font-bold uppercase text-white shadow-md shadow-gray-500 duration-500 hover:scale-105 max-lg:w-[90%] max-lg:text-sm"
                 type="submit"
               >
-                Falar com Consultor
+                {isLoading ? <Loading /> : 'Falar com Consultor'}
               </button>
             </div>
           ) : (
@@ -163,9 +159,4 @@ const prices = [
   { plan: `350MB`, price: '99,90' },
   { plan: `450MB`, price: '119,90' },
   { plan: `650MB`, price: '139,90' },
-];
-
-const contact = [
-  { method: `Me chame no WhatsApp`, price: '0' },
-  { method: `Me Ligue`, price: '0' },
 ];

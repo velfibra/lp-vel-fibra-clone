@@ -25,7 +25,7 @@ type dealData = {
   title: string;
   value: string;
   person_id: any;
-  pipeline_id: number;
+  pipeline_id?: number;
   visible_to: number;
   user_id?: any;
   '489d1f8ec764001bc871ac69de95ddd24256fe68'?: string;
@@ -107,6 +107,21 @@ const postDeal = async (data: dealData) => {
     }
 };
 
+const postDealInviability = async (data: dealData) => {
+    try {
+      await axios.post('https://api.pipedrive.com/v1/deals', data, {
+        params: {
+          api_token: '222f88de28024b4e36d1328030212ae6079389f4',
+        },
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+    } catch (error) {
+      console.error('Erro ao criar negócio:', error);
+    }
+};
+
 const incrementSellerIndex = async () => {
     try {
         const sellerIndex = await getIndex();
@@ -117,4 +132,4 @@ const incrementSellerIndex = async () => {
         console.error('Erro ao atualizar o índice do vendedor:', error);
     }
 };
-export { fetchEmail, postPerson, postDeal };
+export { fetchEmail, postPerson, postDeal, postDealInviability };

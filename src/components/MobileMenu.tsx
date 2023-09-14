@@ -1,11 +1,21 @@
 'use client';
 import { useState } from 'react';
+import Modal from './Modal';
 
 import Popper from './Popper';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <>
@@ -29,13 +39,22 @@ export default function MobileMenu() {
         id="menu-modal"
       >
         <ul>
-          {links.map(({ link, name }) => (
+          {links.map(({ link, name, button, buttonName }) => (
             <li key={name} className="w-full border-b border-primary/30 p-4">
               <a href={link}>{name}</a>
+              {button && (
+                <button
+                  onClick={openModal}
+                  className="-ml-6 w-fit rounded-3xl border-b border-primary/30 bg-secondary p-4 text-xl"
+                >
+                  {buttonName}
+                </button>
+              )}
             </li>
           ))}
         </ul>
       </Popper>
+      <Modal price={'119,90'} id="form_450mb" isOpen={isModalOpen} onClose={closeModal} />
     </>
   );
 }
@@ -45,5 +64,5 @@ const links = [
   { name: 'Cobertura', link: '#coverage' },
   { name: 'Duvidas', link: '#help' },
   { name: 'Contatos', link: '#contact' },
-  { name: 'Área do cliente', link: 'https://sgp.clickspeed.net.br/accounts/central/login' },
+  { buttonName: 'Consulte Viabilidade', button: true },
 ];

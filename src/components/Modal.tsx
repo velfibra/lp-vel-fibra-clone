@@ -1,6 +1,8 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Form from './PlanForm';
+import ViabilityForm from './VaibilityForm';
+import InviabilityForm from './InviabvilityForm';
 
 interface ModalProps {
   isOpen: boolean;
@@ -11,7 +13,20 @@ interface ModalProps {
   wpp?: string;
 }
 export default function Modal({ isOpen, onClose, price, h1, id, wpp }: ModalProps) {
+  const [viable, setViable] = useState(null);
+  const [viabilityChecked, setViabilityChecked] = useState(false);
+  const [address, setAddress] = useState('');
+
   const modalRef = useRef<HTMLDivElement>(null);
+
+  const handleViability = (bool: any) => {
+    setViable(bool);
+    setViabilityChecked(true);
+  };
+
+  const handleAddress = (formatedAddress: string) => {
+    setAddress(formatedAddress);
+  };
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -63,7 +78,13 @@ export default function Modal({ isOpen, onClose, price, h1, id, wpp }: ModalProp
               X
             </button>
           </div>
-          <Form id={id} price={price} h1={h1} wpp={wpp} />
+          {!viabilityChecked ? (
+            <ViabilityForm handleViability={handleViability} handleAddress={handleAddress} />
+          ) : viable ? (
+            <Form id={id} price={price} h1={h1} wpp={wpp} address={address} />
+          ) : (
+            <InviabilityForm address={address} />
+          )}
         </div>
       </div>
     </>

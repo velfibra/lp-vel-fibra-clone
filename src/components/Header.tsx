@@ -1,9 +1,20 @@
-import Link from 'next/link';
+'use client';
 import Logo from './Logo';
 import LogoMobile from './LogoMobile';
 import MobileMenu from './MobileMenu';
+import { useState } from 'react';
+import Modal from './Modal';
 
 export default function Header() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <header className="top-0 flex h-24 items-center bg-primary max-lg:fixed max-lg:z-10 max-lg:h-20 max-lg:w-full">
       <Logo className="ml-20 max-lg:hidden" />
@@ -18,14 +29,15 @@ export default function Header() {
             ))}
           </ul>
         </nav>
-        <Link
-          href={'https://sgp.clickspeed.net.br/accounts/central/login'}
-          className="font rounded-lg border-[1px] border-black bg-secondary p-2 font-semibold text-white duration-700 hover:scale-110 hover:bg-primary max-lg:hidden xl:mr-5 xl:w-56 2xl:mr-16 2xl:w-fit"
+        <button
+          onClick={openModal}
+          className="rounded-3xl bg-secondary p-2 text-xl font-semibold text-white duration-700 hover:scale-110 hover:bg-purple-500 max-lg:hidden xl:mr-5 xl:w-56 2xl:mr-16 "
         >
-          ÁREA DO CLIENTE
-        </Link>
+          Consulte Viabilidade
+        </button>
       </div>
       <MobileMenu />
+      <Modal price={'119,90'} id="form_450mb" isOpen={isModalOpen} onClose={closeModal} />
     </header>
   );
 }
