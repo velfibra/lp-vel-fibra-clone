@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Form from './PlanForm';
 import ViabilityForm from './VaibilityForm';
 import InviabilityForm from './InviabvilityForm';
@@ -12,6 +12,7 @@ interface ModalProps {
   id: string;
   wpp?: string;
 }
+
 export default function Modal({ isOpen, onClose, price, h1, id, wpp }: ModalProps) {
   const [viable, setViable] = useState(null);
   const [viabilityChecked, setViabilityChecked] = useState(false);
@@ -63,7 +64,36 @@ export default function Modal({ isOpen, onClose, price, h1, id, wpp }: ModalProp
     };
   }, [isOpen, onClose]);
 
+  const resetModalState = () => {
+    setViable(null);
+    setViabilityChecked(false);
+    setAddress('');
+  };
+
+  const closeModal = () => {
+    resetModalState();
+    onClose();
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      resetModalState();
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
+
+  let modalContent;
+
+  if (!viabilityChecked) {
+    modalContent = (
+      <ViabilityForm handleViability={handleViability} handleAddress={handleAddress} />
+    );
+  } else if (viable) {
+    modalContent = <Form id={id} price={price} h1={h1} wpp={wpp} address={address} />;
+  } else {
+    modalContent = <InviabilityForm address={address} />;
+  }
 
   return (
     <>
@@ -73,18 +103,12 @@ export default function Modal({ isOpen, onClose, price, h1, id, wpp }: ModalProp
           <div className="flex justify-end">
             <button
               className="rounded-lg bg-secondary px-3 py-1 font-semibold text-white duration-500 hover:scale-105 hover:bg-primary"
-              onClick={onClose}
+              onClick={closeModal}
             >
               X
             </button>
           </div>
-          {!viabilityChecked ? (
-            <ViabilityForm handleViability={handleViability} handleAddress={handleAddress} />
-          ) : viable ? (
-            <Form id={id} price={price} h1={h1} wpp={wpp} address={address} />
-          ) : (
-            <InviabilityForm address={address} />
-          )}
+          {modalContent}
         </div>
       </div>
     </>
