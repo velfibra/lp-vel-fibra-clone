@@ -32,7 +32,7 @@ export default function WhatsAppButton() {
       aria-label="WhatsApp button"
       title="WhatsApp"
     >
-      <p className="rounded-full bg-white p-2 text-lg font-semibold text-black brightness-200">
+      <p className="rounded-full bg-white p-2 text-lg font-bold text-black brightness-200">
         Contrate Aqui!
       </p>
       <WhatsAppIcon />
