@@ -64,9 +64,12 @@ export default function CookieBanner() {
         >
           Fechar
         </button>
-        <button className="mx-auto rounded-lg bg-primary px-5 py-2 text-white">
+        <Link
+          href={'/politica-de-privacidade'}
+          className="mx-auto rounded-lg bg-primary px-5 py-2 text-white"
+        >
           Política de Privacidade
-        </button>
+        </Link>
       </div>
     </div>
   );
