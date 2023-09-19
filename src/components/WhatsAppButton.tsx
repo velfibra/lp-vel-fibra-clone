@@ -27,7 +27,7 @@ export default function WhatsAppButton() {
     // </div>
     <a
       href={`https://wa.me/${phoneNumber}`}
-      className="hover: fixed bottom-3 right-3 z-50 flex animate-bounce flex-col items-center text-[#40c351] duration-200 hover:scale-125 hover:text-[#29ff45] max-lg:bottom-5 max-lg:right-3"
+      className="hover: fixed bottom-3 right-3 z-40 flex animate-bounce flex-col items-center text-[#40c351] duration-200 hover:scale-125 hover:text-[#29ff45] max-lg:bottom-5 max-lg:right-3"
       target="_blank"
       aria-label="WhatsApp button"
       title="WhatsApp"
