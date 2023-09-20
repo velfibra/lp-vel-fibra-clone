@@ -1,4 +1,4 @@
-import AwardContent from '@/components/AwardContent';
+import AwardComponent from '@/components/AwardComponent';
 import Faq from '@/components/Faq';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
@@ -6,18 +6,20 @@ import Hero from '@/components/Hero';
 import LocationContent from '@/components/LocationContent';
 import PlansContent from '@/components/PlansContent';
 import SVAComponent from '@/components/SVAComponent';
+import SVAplans from '@/components/SVAplans';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-bl from-[#1A0530] via-[#48088b] to-[#1A0530]">
+    <div className="bg-gradient-to-bl from-[#1A0530] via-[#48088b] to-[#1A0530] max-lg:-ml-2">
       <Header />
       <WhatsAppButton />
       <main>
         <Hero />
         <PlansContent />
         <SVAComponent />
-        <AwardContent />
+        <SVAplans />
+        <AwardComponent />
         <LocationContent />
         <Faq />
       </main>

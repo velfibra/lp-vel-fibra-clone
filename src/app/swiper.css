@@ -1,0 +1,26 @@
+/* Estilo para o botão de navegação anterior (prev) */
+.swiper-button-prev {
+    --swiper-theme-color: black; /* Altere a cor conforme necessário */
+  }
+  
+  /* Estilo para o botão de navegação seguinte (next) */
+  .swiper-button-next {
+    --swiper-theme-color: black; /* Altere a cor conforme necessário */
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .swiper-pagination-bullet {
+    --swiper-pagination-bullet-inactive-color: white;
+    --swiper-pagination-bullet-inactive-opacity: 80%;
+  }
+  
+  .swiper-pagination-bullet-active {
+    --swiper-pagination-color: #e40046;
+  }
+  
