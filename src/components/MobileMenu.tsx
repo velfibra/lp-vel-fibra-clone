@@ -39,8 +39,8 @@ export default function MobileMenu() {
         id="menu-modal"
       >
         <ul>
-          {links.map(({ link, name, button, buttonName }) => (
-            <li key={name} className="w-full border-b border-primary/30 p-4">
+          {links.map(({ link, name, button, buttonName }, i) => (
+            <li key={i} className="w-full border-b border-primary/30 p-4">
               <a href={link}>{name}</a>
               {button && (
                 <button
