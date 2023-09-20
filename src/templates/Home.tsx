@@ -11,7 +11,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-bl from-[#1A0530] via-[#48088b] to-[#1A0530] max-lg:-ml-2">
+    <div className="bg-gradient-to-bl from-[#1A0530] via-[#48088b] to-[#1A0530]">
       <Header />
       <WhatsAppButton />
       <main>
