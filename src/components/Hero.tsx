@@ -14,7 +14,7 @@ export default function Hero() {
     setIsModalOpen(false);
   };
   return (
-    <div className="flex items-center bg-hero-image bg-cover max-xl:mt-20 max-lg:h-fit max-lg:flex-col xl:h-[520px] 2xl:h-[700px]">
+    <div className="flex items-center bg-cover max-xl:mt-20 max-lg:h-fit max-lg:flex-col xl:h-[520px] xl:bg-hero-image 2xl:h-[700px]">
       <Image
         className="rise h-fit animate-fadeInLeft xl:hidden"
         src={'/IMG-BANNER-01-VEL-FIBRA.png'}

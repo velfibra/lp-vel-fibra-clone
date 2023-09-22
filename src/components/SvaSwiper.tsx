@@ -32,7 +32,7 @@ export default function SvaSwiper() {
         slideShadows: false,
       }}
       modules={[EffectCoverflow, Autoplay]}
-      className="mySwiper max-lg:my-10 xl:my-20 xl:w-1/2"
+      className="mySwiper max-lg:my-10 max-lg:w-[95%] xl:my-20 xl:w-1/2"
       onSlideChange={handleSlideChange}
     >
       {SVAs.map(({ src, alt }, index) => (
