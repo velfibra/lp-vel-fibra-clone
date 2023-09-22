@@ -15,14 +15,8 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-br" className="scroll-smooth">
+    <html lang="pt-br" className="scroll-smooth" manifest="cache.manifest">
       <head>
-        <meta
-          name="google-site-verification"
-          content="pVoqKhYcW4rD9ZFppSPc0Dq6IUPZ5KqziBXFcVzcTGA"
-        />
-      </head>
-      <>
         <Script id="google-analytics">
           {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -32,7 +26,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           })(window,document,'script','dataLayer','GTM-WHX92B2');
         `}
         </Script>
-      </>
+      </head>
+      <></>
       <body className={figtree.className}>
         <noscript>
           <iframe
