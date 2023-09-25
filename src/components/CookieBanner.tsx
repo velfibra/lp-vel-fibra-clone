@@ -65,6 +65,7 @@ export default function CookieBanner() {
           Fechar
         </button>
         <Link
+          target="_blank"
           href={'/politica-de-privacidade'}
           className="mx-auto rounded-lg bg-primary px-5 py-2 text-white"
         >
