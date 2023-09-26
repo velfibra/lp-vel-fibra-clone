@@ -5,7 +5,7 @@ export default function SVAComponent() {
   return (
     <section className="mx-auto text-white">
       <div className="mx-auto flex items-center max-lg:w-[95%] max-lg:flex-col xl:w-[80%]">
-        <div className="mx-auto flex flex-col max-lg:mt-5 xl:mt-20 xl:w-[30%]">
+        <div className="mx-auto flex flex-col max-lg:mt-5 xl:mt-20 xl:w-[50%] 2xl:w-[30%]">
           <h1 className="text-left text-5xl font-bold text-white text-shadow max-lg:text-center max-lg:text-2xl xl:mb-5">
             Viva a experiência de ter as vantagens da Vel Fibra
           </h1>

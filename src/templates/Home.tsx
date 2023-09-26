@@ -1,4 +1,5 @@
 import AwardComponent from '@/components/AwardComponent';
+import Condominium from '@/components/Condominium';
 import Faq from '@/components/Faq';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
@@ -20,6 +21,7 @@ export default function Home() {
         <SVAComponent />
         <SVAplans />
         <AwardComponent />
+        <Condominium />
         <LocationContent />
         <Faq />
       </main>

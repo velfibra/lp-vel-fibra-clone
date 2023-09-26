@@ -11,15 +11,15 @@ import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/m
 
 export default function AwardComponent() {
   return (
-    <section className="mx-auto flex items-center text-white max-lg:w-[90%] max-lg:flex-col xl:w-[70%]">
+    <section className="mx-auto flex items-center text-white max-lg:w-[90%] max-lg:flex-col xl:w-[90%] 2xl:w-[70%]">
       <div className="flex flex-col justify-center gap-4 xl:w-1/2">
-        <h1 className="text-center text-5xl font-bold  text-shadow max-lg:text-2xl">
+        <h1 className="text-center font-bold text-shadow max-lg:text-2xl  xl:text-3xl 2xl:text-5xl">
           A Melhor Escolha em Internet
         </h1>
-        <h2 className="text-center text-3xl font-bold  text-shadow max-lg:text-lg">
+        <h2 className="text-center font-bold text-shadow max-lg:text-lg  xl:text-xl 2xl:text-3xl">
           Vel Fibra se Destaca em Belém do Pará
         </h2>
-        <p className="xl:text-xl">
+        <p className="2xl:text-xl">
           A Vel Fibra é a escolha óbvia para quem procura a melhor experiência de internet em Belém
           do Pará. Recebemos reconhecimento por nossa excelência, conquistando três prêmios
           importantes, incluindo "Melhor Velocidade", "Melhor Provedor" e "Melhor Internet para
@@ -40,12 +40,12 @@ export default function AwardComponent() {
         mousewheel={true}
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
-        className="mySwiper max-lg:mt-10 max-lg:h-[310px] max-lg:w-[350px] xl:my-20 xl:h-[600px] xl:w-[700px]"
+        className="mySwiper max-lg:mt-10 max-lg:h-[310px] max-lg:w-[350px] xl:my-20 xl:h-[400px] xl:w-[450px] 2xl:h-[600px] 2xl:w-[700px]"
       >
         {SVAs.map(({ src, alt }) => (
           <SwiperSlide key={alt}>
             <Image
-              className="mx-auto select-none rounded-lg shadow-md shadow-black max-lg:h-[270px] max-lg:w-[270px] xl:h-[540px] xl:w-[540px]"
+              className="xl:h[350px] mx-auto select-none rounded-lg shadow-md shadow-black max-lg:h-[270px] max-lg:w-[270px] xl:h-[350px] xl:w-[350px] 2xl:h-[540px] 2xl:w-[540px] "
               loading="eager"
               src={src}
               alt={alt}
