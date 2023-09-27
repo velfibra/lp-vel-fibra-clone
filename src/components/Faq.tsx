@@ -15,7 +15,7 @@ export default function Faq() {
       </h2>
       <div className="mx-auto my-5 flex w-[80%] items-center justify-evenly max-lg:flex-col max-lg:gap-6">
         {/* <HelpSvg /> */}
-        <div className="rise w-1/2 animate-fadeInRight max-lg:w-screen max-lg:p-5">
+        <div className="rise animate-fadeInLeftt w-1/2 max-lg:w-screen max-lg:p-5">
           {texts.map(({ question, answer }) => (
             <FaqItem key={question} question={question} answer={answer} />
           ))}

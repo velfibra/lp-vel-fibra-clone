@@ -1,6 +1,6 @@
 export default function LocationContent() {
   return (
-    <section className="rise my-10 animate-fadeInUp max-lg:h-[580px] xl:mx-auto xl:h-[500px] xl:w-[80%] 2xl:h-[600px]">
+    <section className="my-10 max-lg:h-[580px] xl:mx-auto xl:h-[500px] xl:w-[80%] 2xl:h-[600px]">
       <h1
         id="coverage"
         className="rise mb-5 animate-fadeInLeft text-center text-4xl font-bold text-white text-shadow max-lg:text-2xl"
