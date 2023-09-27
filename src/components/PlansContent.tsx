@@ -39,7 +39,7 @@ export default function PlansContent() {
         {plans.map(({ h1, h2, id, price, mt, bg, bgButton, hover, icons, offer }) => (
           <div key={h1}>
             <Card
-              className={`my-5 flex ${mt} h-[500px] flex-col gap-10 p-2 ${bg} text-white hover:scale-110 hover:duration-300 max-lg:h-[480px] max-lg:animate-fadeInUp`}
+              className={`my-5 flex ${mt} h-[500px] flex-col gap-10 p-2 ${bg} rise animate-fadeInUp text-white hover:scale-110 hover:duration-300 max-lg:h-[480px]`}
             >
               <div>
                 <div className="flex justify-center">

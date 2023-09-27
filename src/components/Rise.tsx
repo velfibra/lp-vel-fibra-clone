@@ -1,10 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function Rise() {
-  const [observedElements, setObservedElements] = useState<Element[]>([]); // Defina o tipo do estado como Element[]
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -16,20 +14,9 @@ export default function Rise() {
     });
 
     const elements = document.querySelectorAll('.rise');
-    elements.forEach((el) => {
-      observer.observe(el);
-      setObservedElements((prevElements) => [...prevElements, el]);
-    });
+    elements.forEach((el) => observer.observe(el));
 
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []); // Executar apenas uma vez quando o componente monta
-
-  // Evitar que as animações sejam reiniciadas ao voltar para a página
-  useEffect(() => {
-    observedElements.forEach((el) => el.classList.remove('rise'));
-  }, [observedElements]);
-
+    return () => elements.forEach((el) => observer.observe(el));
+  }, []);
   return null;
 }

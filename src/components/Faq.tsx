@@ -4,15 +4,18 @@ import HelpSvg from './HelpSvg';
 export default function Faq() {
   return (
     <section className="mb-20 mt-20 flex h-fit flex-col gap-7 p-6 text-white">
-      <h1 id="help" className="text-center text-4xl font-bold text-shadow max-lg:text-2xl">
+      <h1
+        id="help"
+        className="rise animate-fadeInLeft text-center text-4xl font-bold text-shadow max-lg:text-2xl"
+      >
         Duvidas Frequentes
       </h1>
-      <h2 className="-mt-4 text-center text-xl max-lg:text-center max-lg:text-base">
+      <h2 className="rise -mt-4 animate-fadeInLeft text-center text-xl max-lg:text-center max-lg:text-base">
         A Vel Fibra responde as principais perguntas sobre nossos serviços e cobertura.
       </h2>
       <div className="mx-auto my-5 flex w-[80%] items-center justify-evenly max-lg:flex-col max-lg:gap-6">
         {/* <HelpSvg /> */}
-        <div className="w-1/2 max-lg:w-screen max-lg:p-5">
+        <div className="rise w-1/2 animate-fadeInRight max-lg:w-screen max-lg:p-5">
           {texts.map(({ question, answer }) => (
             <FaqItem key={question} question={question} answer={answer} />
           ))}

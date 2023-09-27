@@ -4,7 +4,7 @@ import SvaSwiper from './SvaSwiper';
 export default function SVAplans() {
   return (
     <section className="mx-auto my-20 bg-cover text-white xl:bg-award-image">
-      <h1 className="rise animate-fadeInUp text-center text-5xl font-bold text-white text-shadow max-lg:text-2xl">
+      <h1 className="rise animate-fadeInLeft text-center text-5xl font-bold text-white text-shadow max-lg:text-2xl">
         Escolha o melhor plano para você
       </h1>
       <div className="mx-auto flex items-center justify-center xl:w-[80%]">

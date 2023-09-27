@@ -12,11 +12,11 @@ import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/m
 export default function AwardComponent() {
   return (
     <section className="mx-auto flex items-center text-white max-lg:w-[90%] max-lg:flex-col xl:w-[90%] 2xl:w-[70%]">
-      <div className="flex flex-col justify-center gap-4 xl:w-1/2">
-        <h1 className="text-center font-bold text-shadow max-lg:text-2xl  xl:text-3xl 2xl:text-5xl">
+      <div className="rise flex animate-fadeInLeft flex-col justify-center gap-4 xl:w-1/2">
+        <h1 className="text-center font-bold  text-shadow max-lg:text-2xl xl:text-3xl 2xl:text-5xl">
           A Melhor Escolha em Internet
         </h1>
-        <h2 className="text-center font-bold text-shadow max-lg:text-lg  xl:text-xl 2xl:text-3xl">
+        <h2 className="text-center font-bold  text-shadow max-lg:text-lg xl:text-xl 2xl:text-3xl">
           Vel Fibra se Destaca em Belém do Pará
         </h2>
         <p className="2xl:text-xl">
@@ -45,7 +45,7 @@ export default function AwardComponent() {
         {SVAs.map(({ src, alt }) => (
           <SwiperSlide key={alt}>
             <Image
-              className="xl:h[350px] mx-auto select-none rounded-lg shadow-md shadow-black max-lg:h-[270px] max-lg:w-[270px] xl:h-[350px] xl:w-[350px] 2xl:h-[540px] 2xl:w-[540px] "
+              className="xl:h[350px] rise mx-auto animate-fadeIn select-none rounded-lg shadow-md shadow-black max-lg:h-[270px] max-lg:w-[270px] xl:h-[350px] xl:w-[350px] 2xl:h-[540px] 2xl:w-[540px] "
               loading="eager"
               src={src}
               alt={alt}

@@ -3,7 +3,7 @@ export default function LocationContent() {
     <section className="rise my-10 animate-fadeInUp max-lg:h-[580px] xl:mx-auto xl:h-[500px] xl:w-[80%] 2xl:h-[600px]">
       <h1
         id="coverage"
-        className="rise mb-5 animate-fadeInUp text-center text-4xl font-bold text-white text-shadow max-lg:text-2xl"
+        className="rise mb-5 animate-fadeInLeft text-center text-4xl font-bold text-white text-shadow max-lg:text-2xl"
       >
         Estamos por toda Belém!
       </h1>
