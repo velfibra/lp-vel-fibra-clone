@@ -39,6 +39,10 @@ export default function CookieBanner() {
     return null;
   }
 
+  if (typeof window !== 'undefined' && window.location.pathname === '/politica-de-privacidade') {
+    return null;
+  }
+
   if (cookieConsent) {
     return null;
   }
