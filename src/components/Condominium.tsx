@@ -27,7 +27,7 @@ export default function Condominium() {
         />
       </div>
       <div className="flex flex-col xl:w-[60%]">
-        <h1 className="rise animate-fadeInRight font-bold text-shadow max-lg:text-center  max-lg:text-2xl xl:text-3xl 2xl:text-5xl">
+        <h1 className="rise animate-fadeIn font-bold text-shadow max-lg:text-center  max-lg:text-2xl xl:text-3xl 2xl:text-5xl">
           Leve a Vel Fibra para seu Condomínio
         </h1>
         <div className="lg:hidden">
@@ -39,12 +39,12 @@ export default function Condominium() {
             height={1080}
           />
         </div>
-        <div className="rise my-10 animate-fadeInRight max-lg:w-full max-lg:p-5 2xl:w-[80%]">
+        <div className="rise my-10 animate-fadeIn max-lg:w-full max-lg:p-5 2xl:w-[80%]">
           {texts.map(({ question, answer }) => (
             <FaqItem key={question} question={question} answer={answer} />
           ))}
         </div>
-        <h1 className="rise rise mb-10 animate-fadeInRight font-semibold text-shadow max-lg:text-center max-lg:text-lg xl:text-xl 2xl:text-2xl">
+        <h1 className="rise rise mb-10 animate-fadeIn font-semibold text-shadow max-lg:text-center max-lg:text-lg xl:text-xl 2xl:text-2xl">
           Aperte o Botão e entraremos em contato para mais informações
         </h1>
         <button
