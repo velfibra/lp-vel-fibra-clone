@@ -28,7 +28,7 @@ export default function Condominium() {
       </div>
       <div className="flex flex-col xl:w-[60%]">
         <h1 className="rise animate-fadeIn font-bold text-shadow max-lg:text-center  max-lg:text-2xl xl:text-3xl 2xl:text-5xl">
-          Leve a Vel Fibra para seu Condomínio
+          Leve a Vel Fibra para seu Condomínio!
         </h1>
         <div className="lg:hidden">
           <Image
