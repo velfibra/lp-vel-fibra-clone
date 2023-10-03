@@ -115,6 +115,6 @@ export default function CondominiumForm({ address }: Props) {
 
 const inputs = [
   { name: 'name', placeHolder: 'Nome' },
-  { name: 'condomínio', placeHolder: 'Condomínio' },
+  { name: 'condomínio', placeHolder: 'Nome do Condomínio' },
   { name: 'phone', placeHolder: 'Telefone' },
 ] as const;
