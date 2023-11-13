@@ -35,14 +35,21 @@ export default function PlansContent() {
           Escolha sua Internet banda larga e tenha wi-fi para toda a Família!
         </h2>
       </div>
-      <div className="mx-auto -mt-5 flex justify-between text-shadow max-lg:w-full max-lg:flex-col max-lg:items-center xl:w-[90%] xl:animate-fadeInUp 2xl:w-[60%]">
+      {/* "mx-auto -mt-5 flex justify-between text-shadow max-lg:w-full max-lg:flex-col max-lg:items-center xl:w-[90%] xl:animate-fadeInUp 2xl:w-[60%]" */}
+      <div className="mx-auto -mt-5 flex justify-between text-shadow max-lg:w-full max-lg:flex-col max-lg:items-center xl:w-[100%] xl:animate-fadeInUp 2xl:w-[90%]">
         {plans.map(({ h1, h2, id, price, mt, bg, bgButton, hover, icons, offer }) => (
           <div key={h1}>
+            {/* `my-5 flex ${mt} h-[500px] flex-col gap-10 p-2 ${bg} rise animate-fadeInUp text-white hover:scale-110 hover:duration-300 max-lg:h-[480px]` */}
             <Card
-              className={`my-5 flex ${mt} h-[500px] flex-col gap-10 p-2 ${bg} rise animate-fadeInUp text-white hover:scale-110 hover:duration-300 max-lg:h-[480px]`}
+              className={`my-5 flex ${mt} h-[500px] w-[] flex-col gap-10 p-2 ${bg} rise animate-fadeInUp text-white hover:scale-110 hover:duration-300 max-lg:h-[480px]`}
             >
               <div>
                 <div className="flex justify-center">
+                  {offer && (
+                    <div className="absolute -mt-10 animate-bounce rounded-2xl bg-gray-700 p-2 text-center text-xl font-bold">
+                      {offer}
+                    </div>
+                  )}
                   <CardTitle>{h1}</CardTitle>
                   <span className="ml-1 mt-9 self-center font-sans text-[25px] font-semibold">
                     MEGA
@@ -84,6 +91,18 @@ export default function PlansContent() {
 
 const plans = [
   {
+    h1: '150',
+    id: 'form_350mb',
+    h2: 'R$ 59,90',
+    offer: 'Black Friday',
+    price: '59,90',
+    text: 'text-primary',
+    bg: 'bg-gradient-to-r from-secondary via-secondary to-red-400',
+    bgButton: 'from-primary to-primary/80',
+    hover: 'hover:bg-gradient-to-b hover:from-[#1A0530] hover:to-[#1A0530]/60',
+    icons: [{ src: '/WIFI-BASICS.png', alt: 'WIFI-BASICS' }],
+  },
+  {
     h1: '350',
     id: 'form_350mb',
     h2: 'R$ 99,90',
@@ -101,7 +120,6 @@ const plans = [
     h2: 'R$ 119,90',
     price: '119,90',
     text: 'text-secondary',
-    offer: true,
     bg: 'bg-gradient-to-r from-primary  to-fuchsia-800',
     bgButton: 'from-secondary to-secondary/60',
     hover: 'hover:bg-gradient-to-b hover:from-[#1A0530] hover:to-[#1A0530]/60',
