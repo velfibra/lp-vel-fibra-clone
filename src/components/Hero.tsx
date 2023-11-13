@@ -13,11 +13,13 @@ export default function Hero() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  //xl:bg-hero-image
   return (
-    <div className="flex items-center bg-cover max-xl:mt-20 max-lg:h-fit max-lg:flex-col xl:h-[520px] xl:bg-hero-image 2xl:h-[700px]">
+    <div className="flex items-center bg-cover max-xl:mt-20 max-lg:h-fit max-lg:flex-col xl:h-[520px] 2xl:h-[700px]">
       <Image
-        className="rise h-fit animate-fadeInLeft xl:hidden"
-        src={'/IMG-BANNER-01-VEL-FIBRA.png'}
+        className="rise my-5 h-fit animate-fadeInLeft p-5 xl:hidden"
+        //'/IMG-BANNER-01-VEL-FIBRA.png'}
+        src={'/SELO-BF-VEL-FIBRA.png'}
         alt="colaborador Vel Fibra"
         width={800}
         height={735}
@@ -37,8 +39,8 @@ export default function Hero() {
         </button>
       </div>
       <Image
-        className="rise rise ml-10 h-fit animate-fadeIn max-lg:hidden xl:w-[40%]"
-        src={'/IMG-BANNER-01-VEL-FIBRA.png'}
+        className="rise rise mr-10 h-fit animate-fadeIn rounded-xl max-lg:hidden xl:w-[40%]"
+        src={'/SELO-BF-VEL-FIBRA.png'}
         alt="colaborador Vel Fibra"
         width={800}
         height={735}
