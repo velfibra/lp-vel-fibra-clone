@@ -40,8 +40,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CookieBanner />
         {children}
         <Rise />
-        {/* <Script src="https://chatbot.mundiale.com.br/click-speed-saas/lib.js"></Script>
-        <Script src="https://chatbot.mundiale.com.br/click-speed-saas/snippet.js"></Script> */}
+        <Script src="https://chatbot.mundiale.com.br/click-speed-saas/lib.js"></Script>
+        <Script src="https://chatbot.mundiale.com.br/click-speed-saas/snippet.js"></Script>
       </body>
     </html>
   );
