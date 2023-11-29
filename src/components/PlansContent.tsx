@@ -62,7 +62,7 @@ export default function PlansContent() {
                 </div>
               </div>
               <CardContent>
-                <h3 className="text-center">Instalação grátis**</h3>
+                <h3 className="text-center">Instalação grátis em 24 horas**</h3>
                 <h3 className="text-center">Wi-fi Grátis</h3>
                 <div className="my-5 flex justify-center gap-2">
                   {icons?.map(({ src, alt }) => (
