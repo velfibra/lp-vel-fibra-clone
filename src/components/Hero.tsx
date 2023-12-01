@@ -19,7 +19,7 @@ export default function Hero() {
       <Image
         className="rise my-5 h-fit animate-fadeInLeft p-5 xl:hidden"
         //'/IMG-BANNER-01-VEL-FIBRA.png'}
-        src={'/SELO-BF-VEL-FIBRA.png'}
+        src={'/IMG-BANNER-01-VEL-FIBRA.png'}
         alt="colaborador Vel Fibra"
         width={800}
         height={735}
