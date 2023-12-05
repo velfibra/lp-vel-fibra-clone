@@ -15,7 +15,7 @@ export default function Home() {
     // bg-gradient-to-bl from-[#1A0530] via-[#48088b] to-[#1A0530]
     <div className="bg-gradient-to-bl from-[#1A0530] via-[#48088b] to-[#1A0530]">
       <Header />
-      {/* <WhatsAppButton /> */}
+      <WhatsAppButton />
       <main>
         <Hero />
         <PlansContent />
