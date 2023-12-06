@@ -40,7 +40,7 @@ export default function Hero() {
       </div>
       <Image
         className="rise rise mr-10 h-fit animate-fadeIn rounded-xl max-lg:hidden xl:w-[40%]"
-        src={'/SELO-BF-VEL-FIBRA.png'}
+        src={'/IMG-BANNER-01-VEL-FIBRA.png'}
         alt="colaborador Vel Fibra"
         width={800}
         height={735}
