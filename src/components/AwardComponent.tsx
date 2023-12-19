@@ -11,12 +11,12 @@ import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/m
 
 export default function AwardComponent() {
   return (
-    <section className="mx-auto flex items-center text-white max-lg:w-[90%] max-lg:flex-col xl:w-[90%] 2xl:w-[70%]">
+    <section className="mx-auto flex items-center max-lg:w-[90%] max-lg:flex-col xl:w-[90%] 2xl:w-[70%]">
       <div className="rise flex animate-fadeInLeft flex-col justify-center gap-4 xl:w-1/2">
-        <h1 className="text-center font-bold  text-shadow max-lg:text-2xl xl:text-3xl 2xl:text-5xl">
+        <h1 className="text-center font-bold max-lg:text-2xl xl:text-3xl 2xl:text-5xl">
           A Melhor Escolha em Internet
         </h1>
-        <h2 className="text-center font-bold  text-shadow max-lg:text-lg xl:text-xl 2xl:text-3xl">
+        <h2 className="text-center font-bold max-lg:text-lg xl:text-xl 2xl:text-3xl">
           Vel Fibra se Destaca em Belém do Pará
         </h2>
         <p className="2xl:text-xl">

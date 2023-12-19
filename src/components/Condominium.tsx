@@ -16,7 +16,7 @@ export default function Condominium() {
   };
 
   return (
-    <section className="mx-auto my-20 flex justify-center text-white max-lg:mx-auto max-lg:w-[95%] max-lg:flex-col xl:w-[90%] 2xl:w-[80%]">
+    <section className="mx-auto my-20 flex justify-center max-lg:mx-auto max-lg:w-[95%] max-lg:flex-col xl:w-[90%] 2xl:w-[80%]">
       <div className="w-[40%] max-lg:hidden">
         <Image
           className="rounded-xl shadow-md shadow-black/80 xl:w-[400px] 2xl:w-[550px]"
@@ -27,7 +27,7 @@ export default function Condominium() {
         />
       </div>
       <div className="flex flex-col xl:w-[60%]">
-        <h1 className="rise animate-fadeIn font-bold text-shadow max-lg:text-center  max-lg:text-2xl xl:text-3xl 2xl:text-5xl">
+        <h1 className="rise animate-fadeIn font-bold max-lg:text-center  max-lg:text-2xl xl:text-3xl 2xl:text-5xl">
           Leve a Vel Fibra para seu Condomínio!
         </h1>
         <div className="lg:hidden">
@@ -44,12 +44,12 @@ export default function Condominium() {
             <FaqItem key={question} question={question} answer={answer} />
           ))}
         </div>
-        <h1 className="rise rise mb-10 animate-fadeIn font-semibold text-shadow max-lg:text-center max-lg:text-lg xl:text-xl 2xl:text-2xl">
+        <h1 className="rise rise mb-10 animate-fadeIn font-semibold max-lg:text-center max-lg:text-lg xl:text-xl 2xl:text-2xl">
           Aperte o Botão e entraremos em contato para mais informações
         </h1>
         <button
           onClick={() => openModal()}
-          className={`h-14 w-[400px] self-center rounded-full bg-gradient-to-b from-secondary  via-secondary to-red-400 py-2 text-xl font-bold uppercase text-white shadow-md shadow-black/80 duration-500 hover:scale-105 max-lg:w-[75%] xl:mr-20`}
+          className={`h-14 w-[400px] self-center rounded-full bg-gradient-to-b from-secondary  via-secondary to-red-400 py-2 text-xl font-bold uppercase shadow-md shadow-black/80 duration-500 hover:scale-105 max-lg:w-[75%] xl:mr-20`}
         >
           Falar com Consultor
         </button>

@@ -3,10 +3,10 @@ import HelpSvg from './HelpSvg';
 
 export default function Faq() {
   return (
-    <section className="mb-20 mt-20 flex h-fit flex-col gap-7 p-6 text-white">
+    <section className="mb-20 mt-20 flex h-fit flex-col gap-7 p-6 ">
       <h1
         id="help"
-        className="rise animate-fadeInLeft text-center text-4xl font-bold text-shadow max-lg:text-2xl"
+        className="rise animate-fadeInLeft text-center text-4xl font-bold max-lg:text-2xl"
       >
         Duvidas Frequentes
       </h1>
