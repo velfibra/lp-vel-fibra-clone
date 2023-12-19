@@ -87,7 +87,7 @@ export default function PlansContent() {
         ))}
       </div>
       <p className="mt-10 text-center font-semibold">
-        *Valor válido somente com pontualidade no pagamento.
+        *Valor válido para antecipação do pagamento no cartão.
       </p>
       <Modal price={priceItem} h1={title} id={idForm} isOpen={isModalOpen} onClose={closeModal} />
     </section>
