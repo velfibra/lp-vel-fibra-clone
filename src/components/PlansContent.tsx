@@ -27,12 +27,12 @@ export default function PlansContent() {
       <div className="mb-10">
         <h1
           id="plan"
-          className="rise mx-auto w-[50%] animate-fadeInUp text-center text-3xl font-bold text-primary max-lg:text-2xl"
+          className="rise mx-auto animate-fadeInUp text-center text-3xl font-bold text-primary max-lg:text-2xl 2xl:w-[50%]"
         >
           A QUALIDADE DE CONEXÃO QUE VOCÊ JA CONHECE, COM MAIS ECONOMIA PARA O SEU BOLSO.{' '}
           <span className="text-secondary">3 MENSALIDADES GRÁTIS</span>
         </h1>
-        <h2 className="rise mx-auto mt-5 w-[50%] animate-fadeInUp text-left text-lg max-lg:text-center max-lg:text-base xl:mb-28">
+        <h2 className="rise mx-auto mt-5 animate-fadeInUp text-left text-lg max-lg:text-center max-lg:text-base xl:mb-28 2xl:w-[50%]">
           Adquira a internet de fibra óptica da Vel Fibra com facilidade! Contrate qualquer plano,
           pague em até 10 vezes sem juros no cartão de crédito, e garanta desconto. Conexão rápida e
           estável o ano todo, sem boletos extras no final do mês.
