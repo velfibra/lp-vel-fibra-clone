@@ -72,7 +72,7 @@ export default function PlansContent() {
                   </h2>
                 </div>
                 <div className=" mt-5 flex items-center justify-center text-xl">
-                  <span className="mr-1">10X</span>
+                  <span className="mr-1">12X</span>
                   <h2 className="text-center text-4xl font-semibold">{h2}</h2>
                 </div>
               </CardContent>
@@ -111,7 +111,7 @@ const plans = [
     title: 'WI-FI Basic',
     h1: '350',
     id: 'form_350mb',
-    h2: 'R$ 90,00',
+    h2: 'R$ 74,90',
     h3: 'R$ 119,90',
     price: '99,90',
     text: 'text-primary',
@@ -125,7 +125,7 @@ const plans = [
     h1: '450',
     id: 'form_450mb',
     mt: 'xl:-mt-7',
-    h2: 'R$ 108,00',
+    h2: 'R$ 89,90',
     h3: 'R$ 139,90',
     price: '119,90',
     text: 'text-secondary',
@@ -138,7 +138,7 @@ const plans = [
     title: 'WI-FI Premium',
     h1: '650',
     id: 'form_650mb',
-    h2: 'R$ 126,00',
+    h2: 'R$ 104,9',
     h3: 'R$ 159,90',
     price: '139,90',
     text: 'text-primary',
