@@ -138,7 +138,7 @@ const plans = [
     title: 'WI-FI Premium',
     h1: '650',
     id: 'form_650mb',
-    h2: 'R$ 104,9',
+    h2: 'R$ 104,90',
     h3: 'R$ 159,90',
     price: '139,90',
     text: 'text-primary',
